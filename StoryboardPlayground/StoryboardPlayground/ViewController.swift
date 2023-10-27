@@ -41,12 +41,12 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // Setting the title for each item in the PickerView
     // Usually make an array of strings an then set the titles from there
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Hello"
+        return "Test"
     }
     
     // Sets what you want to happen after you change the selected Row in the PickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print ("Hello")
+        print ("Test (\(row))")
     }
     
 }
