@@ -22,18 +22,85 @@
                                     <constraint firstAttribute="height" constant="200" id="al8-jU-KBV"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0m-12-aqe">
+                                <rect key="frame" x="10" y="316" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aWu-AU-jTp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Add Discount"/>
+                                <connections>
+                                    <action selector="addDiscountAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnj-PS-Zof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPf-cp-ACJ">
+                                <rect key="frame" x="220" y="316" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="reJ-Qu-Vc1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Delete Discount"/>
+                                <connections>
+                                    <action selector="deleteDiscountAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkF-32-quo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplier Percentage: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-pe-fzY">
+                                <rect key="frame" x="10" y="576" width="410" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OKx-ub-v6I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount Percentage: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-vC-XFn">
+                                <rect key="frame" x="10" y="626" width="410" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Zsw-Ka-6Ax"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100 Total:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOY-aa-T2u">
+                                <rect key="frame" x="10" y="676" width="410" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Wl3-e8-cG4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8mP-pe-fzY" firstAttribute="top" secondItem="Sie-YB-tev" secondAttribute="bottom" constant="10" id="2s6-hZ-EJd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sie-YB-tev" secondAttribute="trailing" constant="10" id="3oD-bQ-owT"/>
                             <constraint firstItem="Sie-YB-tev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5oO-Bw-S0u"/>
                             <constraint firstItem="Sie-YB-tev" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="FDZ-O3-Smr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HOY-aa-T2u" secondAttribute="trailing" constant="10" id="Kxg-wt-8HD"/>
+                            <constraint firstItem="HOY-aa-T2u" firstAttribute="top" secondItem="fm7-vC-XFn" secondAttribute="bottom" constant="10" id="Msw-Pi-aDD"/>
+                            <constraint firstItem="8mP-pe-fzY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="O2e-XX-8rp"/>
+                            <constraint firstItem="Sie-YB-tev" firstAttribute="top" secondItem="cPf-cp-ACJ" secondAttribute="bottom" constant="10" id="UEl-w3-mwu"/>
+                            <constraint firstItem="cPf-cp-ACJ" firstAttribute="leading" secondItem="A0m-12-aqe" secondAttribute="trailing" constant="10" id="Uzb-2q-jNz"/>
+                            <constraint firstItem="HOY-aa-T2u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="VIX-hF-VTH"/>
+                            <constraint firstItem="Sie-YB-tev" firstAttribute="top" secondItem="A0m-12-aqe" secondAttribute="bottom" constant="10" id="X5L-7M-n2g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8mP-pe-fzY" secondAttribute="trailing" constant="10" id="YrG-cZ-dJo"/>
+                            <constraint firstItem="fm7-vC-XFn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dKm-Oc-PDQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fm7-vC-XFn" secondAttribute="trailing" constant="10" id="hUa-tR-zag"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cPf-cp-ACJ" secondAttribute="trailing" constant="10" id="iaI-ET-e7P"/>
+                            <constraint firstItem="fm7-vC-XFn" firstAttribute="top" secondItem="8mP-pe-fzY" secondAttribute="bottom" constant="10" id="iod-GR-T3z"/>
+                            <constraint firstItem="A0m-12-aqe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="izA-Ry-kdP"/>
                             <constraint firstItem="Sie-YB-tev" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kCh-36-MCb"/>
+                            <constraint firstItem="cPf-cp-ACJ" firstAttribute="width" secondItem="A0m-12-aqe" secondAttribute="width" id="kFx-HE-iND"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="discountPercentageLabel" destination="fm7-vC-XFn" id="QvY-6f-JYz"/>
                         <outlet property="discountPickerView" destination="Sie-YB-tev" id="SCZ-vX-GE1"/>
+                        <outlet property="hundredTotalLabel" destination="HOY-aa-T2u" id="LKA-02-uQw"/>
+                        <outlet property="multiplierPercentageLabel" destination="8mP-pe-fzY" id="TtW-na-pJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -42,6 +109,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

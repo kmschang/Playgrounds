@@ -27,7 +27,64 @@ class ViewController: UIViewController {
     
     // Creating a PickerView
     @IBOutlet weak var discountPickerView: UIPickerView!
+    
+    
+    // Labels
+    @IBOutlet weak var multiplierPercentageLabel: UILabel!
+    @IBOutlet weak var discountPercentageLabel: UILabel!
+    @IBOutlet weak var hundredTotalLabel: UILabel!
+    
+    
+    // Discount Buttons
+    @IBAction func addDiscountAction(_ sender: Any) {
+        if numDiscounts < 4 {
+            numDiscounts += 1
+        }
+        discountPickerView.reloadAllComponents()
+        print(numDiscounts)
+    }
+    @IBAction func deleteDiscountAction(_ sender: Any) {
+        if numDiscounts > 1 {
+            numDiscounts -= 1
+        }
+        discountPickerView.reloadAllComponents()
+        print(numDiscounts)
+    }
+    
+    
+    public var numDiscounts:Int = 1
+    public var multiplierPercentage:Double = 0.0
+    public var discountPercentage:Double = 0.0
+    
+    public var discountOne:Double = 0.0
+    public var discountTwo:Double = 0.0
+    public var discountThree:Double = 0.0
+    public var discountFour:Double = 0.0
 
+    
+    func calculations() {
+        if numDiscounts == 1 {
+            multiplierPercentage = discountOne
+            discountPercentage = (1 - multiplierPercentage)
+        } else if numDiscounts == 2 {
+            multiplierPercentage = discountOne * discountTwo
+            discountPercentage = (1 - multiplierPercentage)
+        } else if numDiscounts == 3 {
+            multiplierPercentage = discountOne * discountTwo * discountThree
+            discountPercentage = (1 - multiplierPercentage)
+        } else if numDiscounts == 4 {
+            multiplierPercentage = discountOne * discountTwo * discountThree * discountFour
+            discountPercentage = (1 - multiplierPercentage)
+        }
+    }
+    
+    func updateLabels() {
+        multiplierPercentageLabel.text = String(format: "Multtiplier Percentage: $%.4f", multiplierPercentage)
+        discountPercentageLabel.text = String(format: "Discount Percentage: $%.4f", discountPercentage)
+        hundredTotalLabel.text = String(format: "$100 Total: $%.4f", (100 * multiplierPercentage))
+    }
+    
+    
 }
 
 
@@ -36,7 +93,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // Sets number of Components
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return numDiscounts
     }
     
     // Sets number of items in each component
@@ -52,7 +109,22 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // Sets what you want to happen after you change the selected Row in the PickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print ("Test (\(titlePercentages[row])),(\(row))")
+        switch numDiscounts {
+        case 1:
+            discountOne = multiplierPercentages[row]
+        case 2:
+            discountTwo = multiplierPercentages[row]
+        case 3:
+            discountThree = multiplierPercentages[row]
+        case 4:
+            discountFour = multiplierPercentages[row]
+        default:
+            print()
+        }
+
+        calculations()
+        updateLabels()
+
     }
     
 }
