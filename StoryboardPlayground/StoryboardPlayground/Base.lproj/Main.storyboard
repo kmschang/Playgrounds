@@ -11,129 +11,83 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StoryboardPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main_vc" id="BYZ-38-t0r" customClass="ViewController" customModule="StoryboardPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sie-YB-tev">
-                                <rect key="frame" x="10" y="366" width="410" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="al8-jU-KBV"/>
-                                </constraints>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0m-12-aqe">
-                                <rect key="frame" x="10" y="316" width="200" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aWu-AU-jTp"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-De-9Xi">
+                                <rect key="frame" x="170" y="288" width="92" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Add Discount"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Discount"/>
                                 <connections>
-                                    <action selector="addDiscountAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnj-PS-Zof"/>
+                                    <action selector="discountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KkZ-nf-04o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPf-cp-ACJ">
-                                <rect key="frame" x="220" y="316" width="200" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOh-qe-WgB">
+                                <rect key="frame" x="10" y="441" width="410" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="reJ-Qu-Vc1"/>
+                                    <constraint firstAttribute="height" constant="40" id="mvO-7Q-9aV"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Delete Discount"/>
-                                <connections>
-                                    <action selector="deleteDiscountAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkF-32-quo"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplier Percentage: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-pe-fzY">
-                                <rect key="frame" x="10" y="576" width="410" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="OKx-ub-v6I"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount Percentage: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-vC-XFn">
-                                <rect key="frame" x="10" y="626" width="410" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Zsw-Ka-6Ax"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                <color key="textColor" systemColor="linkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100 Total:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOY-aa-T2u">
-                                <rect key="frame" x="10" y="676" width="410" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Wl3-e8-cG4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                <color key="textColor" systemColor="linkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN6-QG-eDN">
-                                <rect key="frame" x="10" y="792" width="410" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ONf-CP-Zxg"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemPinkColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Clear Cache">
-                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="24"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="clearCacheAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P7d-zy-qIc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8mP-pe-fzY" firstAttribute="top" secondItem="Sie-YB-tev" secondAttribute="bottom" constant="10" id="2s6-hZ-EJd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sie-YB-tev" secondAttribute="trailing" constant="10" id="3oD-bQ-owT"/>
-                            <constraint firstItem="cN6-QG-eDN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-66" id="5Ii-bY-VAR"/>
-                            <constraint firstItem="Sie-YB-tev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5oO-Bw-S0u"/>
-                            <constraint firstItem="cN6-QG-eDN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EEy-od-N1f"/>
-                            <constraint firstItem="Sie-YB-tev" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="FDZ-O3-Smr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HOY-aa-T2u" secondAttribute="trailing" constant="10" id="Kxg-wt-8HD"/>
-                            <constraint firstItem="HOY-aa-T2u" firstAttribute="top" secondItem="fm7-vC-XFn" secondAttribute="bottom" constant="10" id="Msw-Pi-aDD"/>
-                            <constraint firstItem="8mP-pe-fzY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="O2e-XX-8rp"/>
-                            <constraint firstItem="Sie-YB-tev" firstAttribute="top" secondItem="cPf-cp-ACJ" secondAttribute="bottom" constant="10" id="UEl-w3-mwu"/>
-                            <constraint firstItem="cPf-cp-ACJ" firstAttribute="leading" secondItem="A0m-12-aqe" secondAttribute="trailing" constant="10" id="Uzb-2q-jNz"/>
-                            <constraint firstItem="HOY-aa-T2u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="VIX-hF-VTH"/>
-                            <constraint firstItem="Sie-YB-tev" firstAttribute="top" secondItem="A0m-12-aqe" secondAttribute="bottom" constant="10" id="X5L-7M-n2g"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8mP-pe-fzY" secondAttribute="trailing" constant="10" id="YrG-cZ-dJo"/>
-                            <constraint firstItem="fm7-vC-XFn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dKm-Oc-PDQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fm7-vC-XFn" secondAttribute="trailing" constant="10" id="hUa-tR-zag"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cPf-cp-ACJ" secondAttribute="trailing" constant="10" id="iaI-ET-e7P"/>
-                            <constraint firstItem="fm7-vC-XFn" firstAttribute="top" secondItem="8mP-pe-fzY" secondAttribute="bottom" constant="10" id="iod-GR-T3z"/>
-                            <constraint firstItem="A0m-12-aqe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="izA-Ry-kdP"/>
-                            <constraint firstItem="Sie-YB-tev" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kCh-36-MCb"/>
-                            <constraint firstItem="cPf-cp-ACJ" firstAttribute="width" secondItem="A0m-12-aqe" secondAttribute="width" id="kFx-HE-iND"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cN6-QG-eDN" secondAttribute="trailing" constant="10" id="s0n-Xw-Tsc"/>
+                            <constraint firstItem="uOh-qe-WgB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QHO-Eh-GXT"/>
+                            <constraint firstItem="uOh-qe-WgB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ajW-v5-yO4"/>
+                            <constraint firstItem="uOh-qe-WgB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cRo-Mu-bK8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uOh-qe-WgB" secondAttribute="trailing" constant="10" id="vqe-Bb-dOT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="discountPercentageLabel" destination="fm7-vC-XFn" id="QvY-6f-JYz"/>
-                        <outlet property="discountPickerView" destination="Sie-YB-tev" id="SCZ-vX-GE1"/>
-                        <outlet property="hundredTotalLabel" destination="HOY-aa-T2u" id="LKA-02-uQw"/>
-                        <outlet property="multiplierPercentageLabel" destination="8mP-pe-fzY" id="TtW-na-pJv"/>
+                        <outlet property="label" destination="uOh-qe-WgB" id="cQJ-vC-MjJ"/>
+                        <segue destination="f5T-06-NW2" kind="popoverPresentation" identifier="discount" popoverAnchorView="8bC-Xf-vdC" id="fCE-Ux-x9g">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="4"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="ETW-bN-c2P">
+            <objects>
+                <viewController storyboardIdentifier="second_vc" id="f5T-06-NW2" customClass="SecondViewController" customModule="StoryboardPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x3T-eK-Pka">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-h0-4rb">
+                                <rect key="frame" x="27" y="53" width="62" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="f5T-06-NW2" eventType="touchUpInside" id="0jO-Tt-jpX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZVm-Kd-XaQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="replace" identifier="main" splitViewControllerTargetIndex="1" id="NaO-vG-Yig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSN-S3-9fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="4"/>
+        </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
