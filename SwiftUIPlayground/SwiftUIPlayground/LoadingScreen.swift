@@ -28,7 +28,8 @@ struct LoadingScreen: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 Image("TransparentAppLogo")
-                    .frame(minWidth: 30, idealWidth: 100, maxWidth: .infinity, minHeight: 30, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                    .resizable()
+                    .frame(minWidth: 30, idealWidth: 128, maxWidth: .infinity, minHeight: 30, idealHeight: 128, maxHeight: .infinity, alignment: .center)
                     .aspectRatio(1.0, contentMode: .fit)
                     .padding(50)
                 
@@ -43,7 +44,8 @@ struct LoadingScreen: View {
                     
                     HStack {
                         Image("Transparent_White")
-                            .frame(minWidth: 0, idealWidth: 30, maxWidth: 30, minHeight: 0, idealHeight: 30, maxHeight: 30, alignment: .center)
+                            .resizable()
+                            .frame(minWidth: 0, idealWidth: 50, maxWidth: 50, minHeight: 0, idealHeight: 50, maxHeight: 50, alignment: .center)
                             .aspectRatio(1.0, contentMode: .fit)
                             .padding(.leading, 30)
                         
