@@ -11,6 +11,7 @@
 		0E011A252AECC935002B1F38 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E011A242AECC935002B1F38 /* MainScreen.swift */; };
 		0E011A272AECC936002B1F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E011A262AECC936002B1F38 /* Assets.xcassets */; };
 		0E011A2A2AECC936002B1F38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E011A292AECC936002B1F38 /* Preview Assets.xcassets */; };
+		0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CFA242B63617D00711367 /* LoadingScreen2.swift */; };
 		0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		0E011A242AECC935002B1F38 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		0E011A262AECC936002B1F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E011A292AECC936002B1F38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E2CFA242B63617D00711367 /* LoadingScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen2.swift; sourceTree = "<group>"; };
 		0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 				0E011A222AECC935002B1F38 /* SwiftUIPlaygroundApp.swift */,
 				0E011A242AECC935002B1F38 /* MainScreen.swift */,
 				0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */,
+				0E2CFA242B63617D00711367 /* LoadingScreen2.swift */,
 				0E011A262AECC936002B1F38 /* Assets.xcassets */,
 				0E011A282AECC936002B1F38 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				0E011A252AECC935002B1F38 /* MainScreen.swift in Sources */,
 				0E011A232AECC935002B1F38 /* SwiftUIPlaygroundApp.swift in Sources */,
 				0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */,
+				0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

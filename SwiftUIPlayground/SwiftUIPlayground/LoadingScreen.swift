@@ -16,7 +16,7 @@ struct LoadingScreen: View {
         
         ZStack {
             
-            Color(uiColor: backgroundColor)
+            Color(uiColor: .black)
                 .ignoresSafeArea()
             
             VStack(content: {
@@ -43,7 +43,7 @@ struct LoadingScreen: View {
                 ZStack {
                     
                     HStack {
-                        Image("Transparent_White")
+                        Image("WhiteLogo")
                             .resizable()
                             .frame(minWidth: 0, idealWidth: 50, maxWidth: 50, minHeight: 0, idealHeight: 50, maxHeight: 50, alignment: .center)
                             .aspectRatio(1.0, contentMode: .fit)
