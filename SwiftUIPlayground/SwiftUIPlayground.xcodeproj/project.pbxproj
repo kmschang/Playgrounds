@@ -14,6 +14,7 @@
 		0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CFA242B63617D00711367 /* LoadingScreen2.swift */; };
 		0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */; };
 		0EB256042B84E8D400E30234 /* DayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB256032B84E8D400E30234 /* DayTracker.swift */; };
+		0EB256402B852C3900E30234 /* ShapeTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2563F2B852C3900E30234 /* ShapeTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0E2CFA242B63617D00711367 /* LoadingScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen2.swift; sourceTree = "<group>"; };
 		0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		0EB256032B84E8D400E30234 /* DayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTracker.swift; sourceTree = "<group>"; };
+		0EB2563F2B852C3900E30234 /* ShapeTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 		0E011A162AECC935002B1F38 = {
 			isa = PBXGroup;
 			children = (
+				0EB2563F2B852C3900E30234 /* ShapeTesting.swift */,
 				0E011A212AECC935002B1F38 /* SwiftUIPlayground */,
 				0E011A202AECC935002B1F38 /* Products */,
 			);
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB256402B852C3900E30234 /* ShapeTesting.swift in Sources */,
 				0EB256042B84E8D400E30234 /* DayTracker.swift in Sources */,
 				0E011A252AECC935002B1F38 /* MainScreen.swift in Sources */,
 				0E011A232AECC935002B1F38 /* SwiftUIPlaygroundApp.swift in Sources */,
