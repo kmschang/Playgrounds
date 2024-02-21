@@ -11,33 +11,54 @@ var difference = (Date() - Date().firstDayOfYear()!) / 86400
 
 struct DayTracker: View {
     var body: some View {
-        VStack {
+        ZStack {
             
-            Group {
-                Text("Day\n")
-                    .foregroundStyle(Color(uiColor: .red))
-                    .font(.system(size: 100, weight: .heavy))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .top)
-                    .padding(.bottom, -150)
-                Text("\(Int(difference.rounded(.up)))")
-                    .foregroundStyle(Color(uiColor: .lightGray))
-                    .font(.system(size: 100, weight: .heavy))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .top)
+            Color.white
+                .ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                ZStack {
+                    RoundedRectangle(cornerSize: CGSize(width: 40, height: 40))
+                        .fill(Color.red)
+                        .stroke(
+                            Color.black,
+                            style: StrokeStyle(
+                                lineWidth: 5,
+                                lineCap: .round
+                            )
+                        )
+                            .frame(width: 300, height: 100, alignment: .center)
+                            .overlay(
+                                Text("Day")
+                                    .foregroundStyle(Color(uiColor: .white))
+                                    .font(.system(size: 80, weight: .heavy))
+                                    .multilineTextAlignment(.center)
+                                    .frame(maxWidth: .infinity, alignment: .top))
+                    
+                    RoundedRectangle(cornerSize: CGSize(width: 40, height: 40))
+                        .stroke(
+                            Color.black,
+                            style: StrokeStyle(
+                                lineWidth: 5,
+                                lineCap: .round
+                            )
+                        )
+                            .frame(width: 300, height: 300, alignment: .center)
+                            .overlay(
+                                Text("\(Int(difference.rounded(.up)))")
+                                    .foregroundStyle(Color(uiColor: .black))
+                                    .font(.system(size: 135, weight: .heavy))
+                                    .multilineTextAlignment(.center)
+                                    .padding(.top, 90)
+                                    .frame(maxWidth: .infinity, alignment: .top))
+                            .padding(.top, 200)
+                }
+                Spacer()
             }
+                   
+                        
         }
-        .background(RoundedRectangle(cornerSize: CGSize(width: 40, height: 40))
-            .stroke(
-                Color.red,
-                style: StrokeStyle(
-                    lineWidth: 20,
-                    lineCap: .round
-                )
-            )
-                .fill(Color.white)
-                .frame(width: 300, height: 300, alignment: .center)
-        )
     }
 }
 
@@ -50,14 +71,12 @@ extension Date {
     static func - (lhs: Date, rhs: Date) -> TimeInterval {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
-
-}
-
-extension Date {
+    
     func year(using calendar: Calendar = .current) -> Int {
         calendar.component(.year, from: self)
     }
     func firstDayOfYear(using calendar: Calendar = .current) -> Date? {
         DateComponents(calendar: calendar, year: year(using: calendar)).date
     }
+
 }
