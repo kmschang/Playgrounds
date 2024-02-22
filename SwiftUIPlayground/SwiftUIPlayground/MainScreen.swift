@@ -13,6 +13,8 @@ struct MainScreen: View {
         
     var body: some View {
         
+        @State var badgeManager = AppAlertBadgeManager(application: UIApplication.shared)
+        
         ZStack {
             
             Color.black
@@ -190,6 +192,7 @@ struct MainScreen: View {
                     HStack(alignment: .center, spacing: nil, content: {
                         // Button 1
                         Button(action: {
+                            badgeManager.setAlertBadge(number: 99)
                             print("Button 1")
                         }, label: {
                             VStack {

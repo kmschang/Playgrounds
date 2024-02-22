@@ -11,6 +11,7 @@
 		0E011A252AECC935002B1F38 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E011A242AECC935002B1F38 /* MainScreen.swift */; };
 		0E011A272AECC936002B1F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E011A262AECC936002B1F38 /* Assets.xcassets */; };
 		0E011A2A2AECC936002B1F38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E011A292AECC936002B1F38 /* Preview Assets.xcassets */; };
+		0E2798B42B86E62A009E7497 /* AppAlertBadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2798B32B86E62A009E7497 /* AppAlertBadgeManager.swift */; };
 		0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CFA242B63617D00711367 /* LoadingScreen2.swift */; };
 		0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */; };
 		0EB256042B84E8D400E30234 /* DayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB256032B84E8D400E30234 /* DayTracker.swift */; };
@@ -23,6 +24,7 @@
 		0E011A242AECC935002B1F38 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		0E011A262AECC936002B1F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E011A292AECC936002B1F38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E2798B32B86E62A009E7497 /* AppAlertBadgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertBadgeManager.swift; sourceTree = "<group>"; };
 		0E2CFA242B63617D00711367 /* LoadingScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen2.swift; sourceTree = "<group>"; };
 		0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		0EB256032B84E8D400E30234 /* DayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTracker.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		0E011A212AECC935002B1F38 /* SwiftUIPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				0E2798B32B86E62A009E7497 /* AppAlertBadgeManager.swift */,
 				0EB256032B84E8D400E30234 /* DayTracker.swift */,
 				0E011A222AECC935002B1F38 /* SwiftUIPlaygroundApp.swift */,
 				0E011A242AECC935002B1F38 /* MainScreen.swift */,
@@ -153,6 +156,7 @@
 				0EB256042B84E8D400E30234 /* DayTracker.swift in Sources */,
 				0E011A252AECC935002B1F38 /* MainScreen.swift in Sources */,
 				0E011A232AECC935002B1F38 /* SwiftUIPlaygroundApp.swift in Sources */,
+				0E2798B42B86E62A009E7497 /* AppAlertBadgeManager.swift in Sources */,
 				0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */,
 				0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */,
 			);
@@ -303,9 +307,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.schang.SwiftUIPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,9 +340,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.schang.SwiftUIPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

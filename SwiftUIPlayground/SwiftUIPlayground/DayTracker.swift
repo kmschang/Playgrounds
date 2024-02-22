@@ -10,7 +10,12 @@ import SwiftUI
 var difference = (Date() - Date().firstDayOfYear()!) / 86400
 
 struct DayTracker: View {
+    
+    @State var badgeManager = AppAlertBadgeManager(application: UIApplication.shared)
+    
+    
     var body: some View {
+        
         ZStack {
             
             Color.white
@@ -58,6 +63,9 @@ struct DayTracker: View {
             }
                    
                         
+        }
+        .onAppear {
+            badgeManager.setAlertBadge(number: 1)
         }
     }
 }
