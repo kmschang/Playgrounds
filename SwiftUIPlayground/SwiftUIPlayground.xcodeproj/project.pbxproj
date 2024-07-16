@@ -13,6 +13,7 @@
 		0E011A2A2AECC936002B1F38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E011A292AECC936002B1F38 /* Preview Assets.xcassets */; };
 		0E2798B42B86E62A009E7497 /* AppAlertBadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2798B32B86E62A009E7497 /* AppAlertBadgeManager.swift */; };
 		0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CFA242B63617D00711367 /* LoadingScreen2.swift */; };
+		0E793AE22C47060100C7091A /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E793AE12C47060100C7091A /* Lists.swift */; };
 		0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */; };
 		0EB256042B84E8D400E30234 /* DayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB256032B84E8D400E30234 /* DayTracker.swift */; };
 		0EB256402B852C3900E30234 /* ShapeTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2563F2B852C3900E30234 /* ShapeTesting.swift */; };
@@ -26,6 +27,7 @@
 		0E011A292AECC936002B1F38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E2798B32B86E62A009E7497 /* AppAlertBadgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertBadgeManager.swift; sourceTree = "<group>"; };
 		0E2CFA242B63617D00711367 /* LoadingScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen2.swift; sourceTree = "<group>"; };
+		0E793AE12C47060100C7091A /* Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
 		0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		0EB256032B84E8D400E30234 /* DayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTracker.swift; sourceTree = "<group>"; };
 		0EB2563F2B852C3900E30234 /* ShapeTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeTesting.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				0EB256032B84E8D400E30234 /* DayTracker.swift */,
 				0E011A222AECC935002B1F38 /* SwiftUIPlaygroundApp.swift */,
 				0E011A242AECC935002B1F38 /* MainScreen.swift */,
+				0E793AE12C47060100C7091A /* Lists.swift */,
 				0E8495502B5F12DD00DCD876 /* LoadingScreen.swift */,
 				0E2CFA242B63617D00711367 /* LoadingScreen2.swift */,
 				0E011A262AECC936002B1F38 /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				0E011A252AECC935002B1F38 /* MainScreen.swift in Sources */,
 				0E011A232AECC935002B1F38 /* SwiftUIPlaygroundApp.swift in Sources */,
 				0E2798B42B86E62A009E7497 /* AppAlertBadgeManager.swift in Sources */,
+				0E793AE22C47060100C7091A /* Lists.swift in Sources */,
 				0E8495512B5F12DD00DCD876 /* LoadingScreen.swift in Sources */,
 				0E2CFA252B63617D00711367 /* LoadingScreen2.swift in Sources */,
 			);
