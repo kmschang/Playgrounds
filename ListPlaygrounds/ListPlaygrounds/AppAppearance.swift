@@ -4,17 +4,30 @@ struct AppAppearance: View {
     @Binding var customColors: [CustomColors]
     @Binding var defaultColors: [DefaultColors]
     
+    @Binding var themeColor: ThemeColor
+    @Binding var appearance: AppearanceStyle
+    @Binding var iconColor: IconColor
+    
     @State private var addCustomColorPopover: Bool = false
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     var body: some View {
         List {
             Section {
-                ForEach(defaultColors) { color in
+                ForEach(defaultColors.indices, id: \.self) { index in
                     Button {
-                        // Handle color selection
+                        selectDefaultColor(at: index)
                     } label: {
-                        Label(color.colorName, systemImage: color.isSelected ? "square.fill" : "square")
-                            .foregroundStyle(color.color)
+                        HStack {
+                            Label(defaultColors[index].colorName, systemImage: defaultColors[index].isSelected ? "circle.fill" : "circle")
+                                .foregroundColor(defaultColors[index].color)
+                            Spacer()
+                            if defaultColors[index].isSelected {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(defaultColors[index].color)
+                            }
+                        }
                     }
                 }
             } header: {
@@ -24,12 +37,19 @@ struct AppAppearance: View {
             }
             
             Section {
-                ForEach(customColors) { color in
+                ForEach(customColors.indices, id: \.self) { index in
                     Button {
-                        // Handle color selection
+                        selectCustomColor(at: index)
                     } label: {
-                        Label(color.colorName, systemImage: color.isSelected ? "square.fill" : "square")
-                            .foregroundStyle(Color(hex: color.colorHEX))
+                        HStack {
+                            Label(customColors[index].colorName, systemImage: customColors[index].isSelected ? "circle.fill" : "circle")
+                                .foregroundColor(Color(hex: customColors[index].colorHEX))
+                            Spacer()
+                            if customColors[index].isSelected {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(Color(hex: customColors[index].colorHEX))
+                            }
+                        }
                     }
                 }
                 Button {
@@ -47,12 +67,46 @@ struct AppAppearance: View {
         .popover(isPresented: $addCustomColorPopover) {
             AddCustomColor(customColors: $customColors, customName: "", customHEX: "")
         }
+        .onChange(of: colorScheme, initial: false) { oldValue, newValue in
+            setupDefaultColors()
+        }
+    }
+    
+    private func selectDefaultColor(at index: Int) {
+        for i in defaultColors.indices {
+            defaultColors[i].isSelected = i == index
+        }
+        for i in customColors.indices {
+            customColors[i].isSelected = false
+        }
+    }
+    
+    private func selectCustomColor(at index: Int) {
+        for i in customColors.indices {
+            customColors[i].isSelected = i == index
+        }
+        for i in defaultColors.indices {
+            defaultColors[i].isSelected = false
+        }
+    }
+    
+    private func setupDefaultColors() {
+        defaultColors = [
+            DefaultColors(colorName: "Red", color: .red, colorUI: .red, isSelected: false),
+            DefaultColors(colorName: "Orange", color: .orange, colorUI: .orange, isSelected: false),
+            DefaultColors(colorName: "Yellow", color: .yellow, colorUI: .yellow, isSelected: false),
+            DefaultColors(colorName: "Green", color: .green, colorUI: .green, isSelected: false),
+            DefaultColors(colorName: "Blue", color: .blue, colorUI: .blue, isSelected: false),
+            DefaultColors(colorName: "Purple", color: .purple, colorUI: .purple, isSelected: false),
+            DefaultColors(colorName: "Auto", color: colorScheme == .dark ? .white : .black, colorUI: colorScheme == .dark ? .white : .black, isSelected: true)
+        ]
     }
 }
 
 #Preview {
     ContentView()
 }
+
 
 extension Color {
     init(hex string: String) {

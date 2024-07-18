@@ -13,8 +13,6 @@ enum ThemeColor {
     case green
     case blue
     case purple
-    case black
-    case white
     case auto
 }
 
@@ -27,7 +25,25 @@ enum IconColor {
     case purple
     case black
     case white
-    case rainbow
+}
+
+func updateTheme(themeColor: ThemeColor) -> Color {
+    switch themeColor {
+    case .red:
+        return .red
+    case .orange:
+        return .orange
+    case .yellow:
+        return .yellow
+    case .green:
+        return .green
+    case .blue:
+        return .blue
+    case .purple:
+        return .purple
+    case .auto:
+        return .primary
+    }
 }
 
 struct DefaultColors: Identifiable {
@@ -56,38 +72,18 @@ struct ContentView: View {
     @State var iconColor: IconColor = .white
     
     @State var customColors: [CustomColors] = []
-    @State var defaultColors: [DefaultColors] = [
-        DefaultColors(colorName: "Red", color: .red, colorUI: .red, isSelected: false),
-        DefaultColors(colorName: "Orange", color: .orange, colorUI: .orange, isSelected: false),
-        DefaultColors(colorName: "Yellow", color: .yellow, colorUI: .yellow, isSelected: false),
-        DefaultColors(colorName: "Green", color: .green, colorUI: .green, isSelected: false),
-        DefaultColors(colorName: "Blue", color: .blue, colorUI: .blue, isSelected: false),
-        DefaultColors(colorName: "Purple", color: .purple, colorUI: .purple, isSelected: false),
-        DefaultColors(colorName: "Black", color: .black, colorUI: .black, isSelected: false),
-        DefaultColors(colorName: "White", color: .white, colorUI: .white, isSelected: false)
-    ]
+    @State var defaultColors: [DefaultColors] = []
     
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    TextField("Username", text: $username)
-                    Toggle("Private Account", isOn: $privateAccount)
-                } header: {
-                    Text("Profile")
-                } footer: {
-                    Text("Everything you need to change when it comes to your account settings")
-                }
-                
-                Section {
-                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors)) {
+                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors, themeColor: $themeColor, appearance: $appearance, iconColor: $iconColor)) {
                         Text("App Appearance")
                     }
-                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors)) {
-                        Text("App Theme")
+                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors, themeColor: $themeColor, appearance: $appearance, iconColor: $iconColor)) {                        Text("App Theme")
                     }
-                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors)) {
-                        Text("App Icon")
+                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors, themeColor: $themeColor, appearance: $appearance, iconColor: $iconColor)) {                        Text("App Icon")
                     }
                 } header: {
                     Text("App Customization")
@@ -97,7 +93,25 @@ struct ContentView: View {
             }
             .navigationTitle("App Settings")
         }
+        .onAppear {
+            setupDefaultColors()
+        }.onChange(of: colorScheme, initial: false) { oldValue, newValue in
+            setupDefaultColors()
+        }
     }
+    
+    private func setupDefaultColors() {
+        defaultColors = [
+            DefaultColors(colorName: "Red", color: .red, colorUI: .red, isSelected: false),
+            DefaultColors(colorName: "Orange", color: .orange, colorUI: .orange, isSelected: false),
+            DefaultColors(colorName: "Yellow", color: .yellow, colorUI: .yellow, isSelected: false),
+            DefaultColors(colorName: "Green", color: .green, colorUI: .green, isSelected: false),
+            DefaultColors(colorName: "Blue", color: .blue, colorUI: .blue, isSelected: false),
+            DefaultColors(colorName: "Purple", color: .purple, colorUI: .purple, isSelected: false),
+            DefaultColors(colorName: "Auto", color: colorScheme == .dark ? .white : .black, colorUI: colorScheme == .dark ? .white : .black, isSelected: true)
+        ]
+    }
+    
 }
 
 #Preview {
