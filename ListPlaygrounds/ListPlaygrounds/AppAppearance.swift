@@ -4,72 +4,73 @@ struct AppAppearance: View {
     @Binding var customColors: [CustomColors]
     @Binding var defaultColors: [DefaultColors]
     
-    @Binding var themeColor: ThemeColor
-    @Binding var appearance: AppearanceStyle
-    @Binding var iconColor: IconColor
-    
     @State private var addCustomColorPopover: Bool = false
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    
+        
     var body: some View {
-        List {
-            Section {
-                ForEach(defaultColors.indices, id: \.self) { index in
-                    Button {
-                        selectDefaultColor(at: index)
-                    } label: {
-                        HStack {
-                            Label(defaultColors[index].colorName, systemImage: defaultColors[index].isSelected ? "circle.fill" : "circle")
-                                .foregroundColor(defaultColors[index].color)
-                            Spacer()
-                            if defaultColors[index].isSelected {
-                                Image(systemName: "checkmark")
+        NavigationView {
+            List {
+                Section {
+                    ForEach(defaultColors.indices, id: \.self) { index in
+                        Button {
+                            selectDefaultColor(at: index)
+                        } label: {
+                            HStack {
+                                Label(defaultColors[index].colorName, systemImage: defaultColors[index].isSelected ? "circle.fill" : "circle")
                                     .foregroundColor(defaultColors[index].color)
+                                Spacer()
+                                if defaultColors[index].isSelected {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(defaultColors[index].color)
+                                }
                             }
                         }
                     }
+                } header: {
+                    Text("Default App Colors")
+                } footer: {
+                    Text("Colors that come with the app")
                 }
-            } header: {
-                Text("Default App Colors")
-            } footer: {
-                Text("Colors that come with the app")
-            }
-            
-            Section {
-                ForEach(customColors.indices, id: \.self) { index in
-                    Button {
-                        selectCustomColor(at: index)
-                    } label: {
-                        HStack {
-                            Label(customColors[index].colorName, systemImage: customColors[index].isSelected ? "circle.fill" : "circle")
-                                .foregroundColor(Color(hex: customColors[index].colorHEX))
-                            Spacer()
-                            if customColors[index].isSelected {
-                                Image(systemName: "checkmark")
+                
+                Section {
+                    ForEach(customColors.indices, id: \.self) { index in
+                        Button {
+                            selectCustomColor(at: index)
+                        } label: {
+                            HStack {
+                                Label(customColors[index].colorName, systemImage: customColors[index].isSelected ? "circle.fill" : "circle")
                                     .foregroundColor(Color(hex: customColors[index].colorHEX))
+                                Spacer()
+                                if customColors[index].isSelected {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(Color(hex: customColors[index].colorHEX))
+                                }
                             }
                         }
                     }
+                    Button {
+                        addCustomColorPopover.toggle()
+                    } label: {
+                        Label("Add", systemImage: "plus")
+                    }
+                } header: {
+                    Text("Custom App Colors")
+                } footer: {
+                    Text("Custom app colors that the user added later")
                 }
-                Button {
-                    addCustomColorPopover.toggle()
-                } label: {
-                    Label("Add", systemImage: "plus")
-                }
-            } header: {
-                Text("Custom App Colors")
-            } footer: {
-                Text("Custom app colors that the user added later")
+            }
+            .popover(isPresented: $addCustomColorPopover) {
+                AddCustomColor(customColors: $customColors, customName: "", customHEX: "")
+            }
+            .onChange(of: colorScheme, initial: false) { oldValue, newValue in
+                setupDefaultColors()
             }
         }
+        .navigationBarHidden(false)
+        .navigationTitle("App Theme")
         .navigationBarTitleDisplayMode(.inline)
-        .popover(isPresented: $addCustomColorPopover) {
-            AddCustomColor(customColors: $customColors, customName: "", customHEX: "")
-        }
-        .onChange(of: colorScheme, initial: false) { oldValue, newValue in
-            setupDefaultColors()
-        }
+        
     }
     
     private func selectDefaultColor(at index: Int) {

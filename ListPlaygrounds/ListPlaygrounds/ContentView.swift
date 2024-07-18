@@ -1,51 +1,5 @@
 import SwiftUI
 
-enum AppearanceStyle {
-    case dark
-    case light
-    case auto
-}
-
-enum ThemeColor {
-    case red
-    case orange
-    case yellow
-    case green
-    case blue
-    case purple
-    case auto
-}
-
-enum IconColor {
-    case red
-    case orange
-    case yellow
-    case green
-    case blue
-    case purple
-    case black
-    case white
-}
-
-func updateTheme(themeColor: ThemeColor) -> Color {
-    switch themeColor {
-    case .red:
-        return .red
-    case .orange:
-        return .orange
-    case .yellow:
-        return .yellow
-    case .green:
-        return .green
-    case .blue:
-        return .blue
-    case .purple:
-        return .purple
-    case .auto:
-        return .primary
-    }
-}
-
 struct DefaultColors: Identifiable {
     var colorName: String
     var color: Color
@@ -67,23 +21,22 @@ struct ContentView: View {
     @State var username: String = ""
     @State var privateAccount: Bool = true
     
-    @State var themeColor: ThemeColor = .auto
-    @State var appearance: AppearanceStyle = .auto
-    @State var iconColor: IconColor = .white
-    
     @State var customColors: [CustomColors] = []
     @State var defaultColors: [DefaultColors] = []
-    
+        
     var body: some View {
+
         NavigationView {
             List {
                 Section {
-                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors, themeColor: $themeColor, appearance: $appearance, iconColor: $iconColor)) {
+                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors)) {
+                        Text("App Theme")
+                    }
+                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors)) {
                         Text("App Appearance")
                     }
-                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors, themeColor: $themeColor, appearance: $appearance, iconColor: $iconColor)) {                        Text("App Theme")
-                    }
-                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors, themeColor: $themeColor, appearance: $appearance, iconColor: $iconColor)) {                        Text("App Icon")
+                    NavigationLink(destination: AppAppearance(customColors: $customColors, defaultColors: $defaultColors)) {
+                        Text("App Icon")
                     }
                 } header: {
                     Text("App Customization")
@@ -98,6 +51,7 @@ struct ContentView: View {
         }.onChange(of: colorScheme, initial: false) { oldValue, newValue in
             setupDefaultColors()
         }
+
     }
     
     private func setupDefaultColors() {
