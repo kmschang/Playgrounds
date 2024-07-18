@@ -12,6 +12,8 @@
 		0E3838AA2C49ABB300D8C449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838A92C49ABB300D8C449 /* Assets.xcassets */; };
 		0E3838AD2C49ABB300D8C449 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838AC2C49ABB300D8C449 /* Preview Assets.xcassets */; };
 		0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838B42C49B1FF00D8C449 /* SettingsView.swift */; };
+		0E3838B82C49D0D700D8C449 /* InfoPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */; };
+		0E3838BA2C49D0E300D8C449 /* ContactPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		0E3838A92C49ABB300D8C449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3838AC2C49ABB300D8C449 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E3838B42C49B1FF00D8C449 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopUp.swift; sourceTree = "<group>"; };
+		0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 		0E3838B62C49B32800D8C449 /* SettingsViews */ = {
 			isa = PBXGroup;
 			children = (
+				0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */,
+				0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -158,6 +164,8 @@
 			files = (
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
+				0E3838B82C49D0D700D8C449 /* InfoPopUp.swift in Sources */,
+				0E3838BA2C49D0E300D8C449 /* ContactPopUp.swift in Sources */,
 				0E3838A62C49ABB200D8C449 /* ListProject3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
