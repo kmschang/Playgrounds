@@ -12,7 +12,7 @@
 		0E3838332C481FCE00D8C449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838322C481FCE00D8C449 /* Assets.xcassets */; };
 		0E3838372C481FCE00D8C449 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838362C481FCE00D8C449 /* Preview Assets.xcassets */; };
 		0E38383E2C482B7200D8C449 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38383D2C482B7200D8C449 /* AppAppearance.swift */; };
-		0E3838402C484DA000D8C449 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38383F2C484DA000D8C449 /* CustomColors.swift */; };
+		0E3838422C48A13F00D8C449 /* AddCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838412C48A13F00D8C449 /* AddCustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		0E3838342C481FCE00D8C449 /* ListPlaygrounds.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ListPlaygrounds.entitlements; sourceTree = "<group>"; };
 		0E3838362C481FCE00D8C449 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E38383D2C482B7200D8C449 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
-		0E38383F2C484DA000D8C449 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		0E3838412C48A13F00D8C449 /* AddCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 				0E38382E2C481FCD00D8C449 /* ListPlaygroundsApp.swift */,
 				0E3838302C481FCD00D8C449 /* ContentView.swift */,
 				0E38383D2C482B7200D8C449 /* AppAppearance.swift */,
-				0E38383F2C484DA000D8C449 /* CustomColors.swift */,
+				0E3838412C48A13F00D8C449 /* AddCustomColor.swift */,
 				0E3838322C481FCE00D8C449 /* Assets.xcassets */,
 				0E3838342C481FCE00D8C449 /* ListPlaygrounds.entitlements */,
 				0E3838352C481FCE00D8C449 /* Preview Content */,
@@ -147,7 +147,7 @@
 			files = (
 				0E38383E2C482B7200D8C449 /* AppAppearance.swift in Sources */,
 				0E3838312C481FCD00D8C449 /* ContentView.swift in Sources */,
-				0E3838402C484DA000D8C449 /* CustomColors.swift in Sources */,
+				0E3838422C48A13F00D8C449 /* AddCustomColor.swift in Sources */,
 				0E38382F2C481FCD00D8C449 /* ListPlaygroundsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,80 +1,57 @@
-//
-//  AppAppearance.swift
-//  ListPlaygrounds
-//
-//  Created by Kyle Schang on 7/17/24.
-//
-
 import SwiftUI
 
 struct AppAppearance: View {
+    @Binding var customColors: [CustomColors]
+    @Binding var defaultColors: [DefaultColors]
     
-    @State private var customColors = CustomColors.preview()
-    @State private var defaultColors = DefaultColors.preview()
+    @State private var addCustomColorPopover: Bool = false
     
     var body: some View {
-        NavigationView {
-            
-            List {
-                
-                Section {
-                    ForEach (defaultColors) {color in
-                        Button {
-                            
-                        } label: {
-                            Label(color.colorName, systemImage: color.isSelected ? "circle.fill" : "circle")
-                                .foregroundStyle(color.color)
-                        }
-                    }
-                } header: {
-                    Text("Default App Colors")
-                } footer: {
-                    Text("Colors that come with the app")
-                }
-                
-                
-                Section {
-                    ForEach(customColors) {color in
-                        Button {
-                            
-                        } label: {
-                            Label(color.colorName, systemImage: color.isSelected ? "circle.fill" : "circle")
-                                .foregroundStyle(Color(hex: color.colorHEX))
-                        }
-
-                    }
+        List {
+            Section {
+                ForEach(defaultColors) { color in
                     Button {
-                        let newCustomColor = CustomColors(colorName: "NEW COLOR \(customColors.count + 1)", colorHEX: "#000000", isSelected: false)
-                        withAnimation {
-                            customColors.append(newCustomColor)
-                        }
+                        // Handle color selection
                     } label: {
-                        Label("Add", systemImage: "plus")
+                        Label(color.colorName, systemImage: color.isSelected ? "square.fill" : "square")
+                            .foregroundStyle(color.color)
                     }
-                } header: {
-                    Text("Custom App Colors")
-                } footer: {
-                    Text("Custom app colors that the user added later")
                 }
-                
-                
-            } .toolbar {
-                Button {
-                    
-                    
-                } label: {
-                    Label("Add Custom Color", systemImage: "plus")
-                }
+            } header: {
+                Text("Default App Colors")
+            } footer: {
+                Text("Colors that come with the app")
             }
             
+            Section {
+                ForEach(customColors) { color in
+                    Button {
+                        // Handle color selection
+                    } label: {
+                        Label(color.colorName, systemImage: color.isSelected ? "square.fill" : "square")
+                            .foregroundStyle(Color(hex: color.colorHEX))
+                    }
+                }
+                Button {
+                    addCustomColorPopover.toggle()
+                } label: {
+                    Label("Add", systemImage: "plus")
+                }
+            } header: {
+                Text("Custom App Colors")
+            } footer: {
+                Text("Custom app colors that the user added later")
+            }
         }
-        .navigationTitle("App Appearance")
+        .navigationBarTitleDisplayMode(.inline)
+        .popover(isPresented: $addCustomColorPopover) {
+            AddCustomColor(customColors: $customColors, customName: "", customHEX: "")
+        }
     }
 }
 
-
 #Preview {
-    AppAppearance()
+    ContentView()
 }
 
 extension Color {
