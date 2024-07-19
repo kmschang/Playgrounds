@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Binding var themeColor:Int
+    
     @State private var infoScreen:Bool = false
     @State private var contactScreen:Bool = false
     
@@ -38,7 +40,7 @@ struct SettingsView: View {
                 NavigationLink(destination: Text("App Appearance")) {
                     Label("App Appearance", systemImage: "paintbrush.fill")
                 }
-                NavigationLink(destination: Text("App Theme")) {
+                NavigationLink(destination: AppTheme(themeColor: $themeColor)) {
                     Label("App Theme", systemImage: "paintpalette.fill")
                 }
                 NavigationLink(destination: Text("App Icons")) {
@@ -121,5 +123,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(themeColor: .constant(1))
 }

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ListProject3App: App {
+    
+    @AppStorage("themeColor") var themeColor:Int = 2
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(themeColor: $themeColor)
         }
     }
 }
