@@ -68,7 +68,7 @@ struct InfoPopUp: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: Text("About App")) {
+                    NavigationLink(destination: AboutApp()) {
                         Text("About App")
                     }
                     NavigationLink(destination: Text("About Developer")) {
