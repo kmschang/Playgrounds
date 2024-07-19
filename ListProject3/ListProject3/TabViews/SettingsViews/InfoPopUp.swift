@@ -12,6 +12,7 @@ struct assetLink: View {
     let linkText: String
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
         HStack {
@@ -21,7 +22,7 @@ struct assetLink: View {
             }
             Spacer()
             Image(systemName: "arrow.up.right")
-                .opacity(0.3)
+                .foregroundStyle(themeManager.selectedTheme.color)
         }
     }
 }
@@ -130,8 +131,15 @@ struct InfoPopUp: View {
     }
 }
 
-#Preview {
-    InfoPopUp()
+struct InfoPopUp_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample ThemeManager for the preview
+        let themeManager = ThemeManager()
+        themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
+        
+        return ContentView()
+            .environmentObject(themeManager) // Inject the sample ThemeManager
+    }
 }
 
 extension Bundle {

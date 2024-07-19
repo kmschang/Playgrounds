@@ -82,6 +82,13 @@ struct AboutDeveloper: View {
     }
 }
 
-#Preview {
-    AboutDeveloper()
+struct AboutDeveloper_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample ThemeManager for the preview
+        let themeManager = ThemeManager()
+        themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
+        
+        return ContentView()
+            .environmentObject(themeManager) // Inject the sample ThemeManager
+    }
 }

@@ -35,7 +35,10 @@ struct ThemeSelectionView: View {
                 }
                 .onDelete(perform: themeManager.removeCustomColor)
                 
-                if themeManager.customColors.count < 10 {
+            }
+            
+            if themeManager.customColors.count < 10 {
+                Section(header: Text("Add Custom Color")) {
                     Button {
                         showingAddCustomColor = true
                     } label: {
@@ -43,6 +46,7 @@ struct ThemeSelectionView: View {
                     }
                 }
             }
+            
         }
         .sheet(isPresented: $showingAddCustomColor) {
             AddCustomColorView(themeManager: themeManager)

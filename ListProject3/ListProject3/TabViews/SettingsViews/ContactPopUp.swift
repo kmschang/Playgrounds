@@ -45,11 +45,7 @@ struct ContactPopUp: View {
             
             Section {
                 NavigationLink (destination: Versions()) {
-                    HStack {
-                        Image(systemName: "square.stack.3d.up")
-                            .padding(.trailing, 5)
-                        Text("Versions")
-                    }
+                    Label("Versions", systemImage: "square.stack.3d.up.fill")
                 }
             } header: {
                 Text("Versions")

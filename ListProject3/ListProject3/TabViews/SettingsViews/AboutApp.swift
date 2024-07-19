@@ -13,6 +13,7 @@ struct ShareItem: View {
     let linkText: String
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
         HStack {
@@ -26,7 +27,7 @@ struct ShareItem: View {
             }
             Spacer()
             Image(systemName: "arrow.up.right")
-                .opacity(0.3)
+                .foregroundStyle(themeManager.selectedTheme.color)
         }
     }
 }
@@ -105,6 +106,13 @@ struct AboutApp: View {
     }
 }
 
-#Preview {
-    AboutApp()
+struct AboutApp_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample ThemeManager for the preview
+        let themeManager = ThemeManager()
+        themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
+        
+        return ContentView()
+            .environmentObject(themeManager) // Inject the sample ThemeManager
+    }
 }
