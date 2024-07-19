@@ -31,13 +31,11 @@ struct AddCustomColor: View {
     private let textLimit = 6
     private let hexCharacterSet = CharacterSet(charactersIn: "0123456789ABCDEF").inverted
     
-    
-    
     func limitText(_ upper: Int) {
-            if customHEX.count > upper {
-                customHEX = String(customHEX.prefix(upper))
-            }
+        if customHEX.count > upper {
+            customHEX = String(customHEX.prefix(upper))
         }
+    }
     
     var body: some View {
         NavigationView {

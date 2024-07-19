@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct AppTheme: View {
-    
-    @State private var showingAlert = false
-    
+
     @Binding var themeColor:Int
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
@@ -68,6 +66,14 @@ struct AppTheme: View {
                 Text("Default Theme Colors")
             } footer: {
                 Text("Theme colors provided by the app")
+            }
+            
+            Section {
+                
+            } header: {
+                Text("Custom Theme Colors")
+            } footer: {
+                Text("Theme colors added by the user")
             }
             
             
