@@ -16,30 +16,34 @@ struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var themeManager: ThemeManager
-    
+        
     // MARK: - Main Body
     var body: some View {
         
-        TabView(selection: $selection,
-                content:  {
-            NavigationView {
-                Text("1st Tab")
-            } .tabItem { Label("1st Tab", systemImage: "1.circle") }
-                .tag(1)
-            NavigationView {
-                Text("2nd Tab")
-            } .tabItem { Label("2nd Tab", systemImage: "2.circle") }
-                .tag(2)
-            NavigationView {
-                Text("3rd Tab")
-            } .tabItem { Label("3rd Tab", systemImage: "3.circle") }
-                .tag(3)
-            NavigationView {
-                SettingsView(themeManager2: ThemeManager())
-            } .tabItem { Label("Settings", systemImage: "gear") }
-                .tag(4)
-        })
-        .tint(themeManager.selectedTheme.color)
+        
+        
+        ZStack {
+            TabView(selection: $selection,
+                    content:  {
+                NavigationView {
+                    Text("1st Tab")
+                } .tabItem { Label("1st Tab", systemImage: "1.circle") }
+                    .tag(1)
+                NavigationView {
+                    Text("2nd Tab")
+                } .tabItem { Label("2nd Tab", systemImage: "2.circle") }
+                    .tag(2)
+                NavigationView {
+                    Text("3rd Tab")
+                } .tabItem { Label("3rd Tab", systemImage: "3.circle") }
+                    .tag(3)
+                NavigationView {
+                    SettingsView(themeManager2: ThemeManager())
+                } .tabItem { Label("Settings", systemImage: "gear") }
+                    .tag(4)
+            })
+            .tint(themeManager.selectedTheme.color)
+        }
             
     }
     

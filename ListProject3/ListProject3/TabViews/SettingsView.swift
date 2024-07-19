@@ -41,7 +41,7 @@ struct SettingsView: View {
             }
             
             Section {
-                NavigationLink(destination: Text("App Appearance")) {
+                NavigationLink(destination: AppearanceSelectionView()) {
                     Label("App Appearance", systemImage: "paintbrush.fill")
                 }
                 NavigationLink(destination: ThemeSelectionView(themeManager: themeManager)) {
