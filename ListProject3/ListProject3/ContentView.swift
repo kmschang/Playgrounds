@@ -9,13 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // App Data
-    @Binding var themeColor:Int
-    
     // Default page (Settings)(Because I'm working on it)
     @State private var selection = 4;
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
         
@@ -34,20 +32,26 @@ struct ContentView: View {
             } .tabItem { Label("3rd Tab", systemImage: "3.circle") }
                 .tag(3)
             NavigationView {
-                SettingsView(themeColor: $themeColor)
+                SettingsView(themeManager2: ThemeManager())
             } .tabItem { Label("Settings", systemImage: "gear") }
                 .tag(4)
         })
-        .tint(themeColor == 1 ? .red : themeColor == 2 ? .orange : themeColor == 3 ? .yellow : themeColor == 4 ? .green : themeColor == 5 ? .blue : themeColor == 6 ? .purple : colorScheme == .dark ? .white : .black)
+        .tint(themeManager.selectedTheme.color)
             
     }
     
     
 }
 
-
-#Preview {
-    ContentView(themeColor: .constant(1))
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample ThemeManager for the preview
+        let themeManager = ThemeManager()
+        themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
+        
+        return ContentView()
+            .environmentObject(themeManager) // Inject the sample ThemeManager
+    }
 }
 
 extension Color {

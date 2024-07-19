@@ -36,8 +36,10 @@ struct ThemeSelectionView: View {
                 .onDelete(perform: themeManager.removeCustomColor)
                 
                 if themeManager.customColors.count < 10 {
-                    Button("Add Custom Color") {
+                    Button {
                         showingAddCustomColor = true
+                    } label: {
+                        Label("Add Custom Color", systemImage: "plus")
                     }
                 }
             }
@@ -57,6 +59,11 @@ struct ThemeRow: View {
         HStack {
             Label(theme.name, systemImage: isSelected ? "circle.fill" : "circle")
                 .foregroundStyle(theme.color)
+            if case .custom(let customColor) = theme {
+                Text("#\(customColor.hexCode)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
             Spacer()
             if isSelected {
                 Image(systemName: "checkmark")

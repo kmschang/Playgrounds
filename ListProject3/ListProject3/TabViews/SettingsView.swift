@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
-    @Binding var themeColor:Int
-    
+        
     @State private var infoScreen:Bool = false
     @State private var contactScreen:Bool = false
+    
+    @EnvironmentObject var themeManager: ThemeManager
+    @ObservedObject var themeManager2: ThemeManager
+
     
     var body: some View {
         List {
@@ -40,7 +42,7 @@ struct SettingsView: View {
                 NavigationLink(destination: Text("App Appearance")) {
                     Label("App Appearance", systemImage: "paintbrush.fill")
                 }
-                NavigationLink(destination: AppTheme(themeColor: $themeColor)) {
+                NavigationLink(destination: ThemeSelectionView(themeManager: themeManager)) {
                     Label("App Theme", systemImage: "paintpalette.fill")
                 }
                 NavigationLink(destination: Text("App Icons")) {
@@ -122,6 +124,15 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    ContentView(themeColor: .constant(1))
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample ThemeManager for the preview
+        let sampleThemeManager = ThemeManager()
+        sampleThemeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
+        
+        return NavigationView {
+            SettingsView(themeManager2: ThemeManager())
+                .environmentObject(sampleThemeManager) // Inject the sample ThemeManager
+        }
+    }
 }

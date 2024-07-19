@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct ListProject3App: App {
     
-    @AppStorage("themeColor") var themeColor:Int = 2
+    @StateObject private var themeManager = ThemeManager()
     
     var body: some Scene {
         WindowGroup {
-            ContentView(themeColor: $themeColor)
+            ContentView()
+                .environmentObject(themeManager)
         }
     }
 }
