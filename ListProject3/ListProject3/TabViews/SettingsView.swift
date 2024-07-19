@@ -63,10 +63,10 @@ struct SettingsView: View {
             }
             
             Section {
-                NavigationLink(destination: Text("About App")) {
+                NavigationLink(destination: AboutApp()) {
                     Label("About App", systemImage: "list.bullet.clipboard.fill")
                 }
-                NavigationLink(destination: Text("About Developer")) {
+                NavigationLink(destination: AboutDeveloper()) {
                     Label("About Developer", systemImage: "person.fill")
                 }
                 NavigationLink(destination: ContactUs()) {
