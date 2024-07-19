@@ -79,6 +79,7 @@ struct ThemeRow: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ThemeSelectionView(themeManager: ThemeManager())
 }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Custom Color Item
 struct CustomColor: Identifiable, Codable {
     let id: UUID
     let name: String
@@ -18,6 +19,7 @@ struct CustomColor: Identifiable, Codable {
     }
 }
 
+// MARK: - Theme Color Item
 enum ThemeColor: Identifiable, Codable, Equatable {
     static func == (lhs: ThemeColor, rhs: ThemeColor) -> Bool {
             switch (lhs, rhs) {
@@ -70,6 +72,7 @@ enum ThemeColor: Identifiable, Codable, Equatable {
     }
 }
 
+// MARK: - Default Colors
 enum DefaultColor: String, Codable, CaseIterable {
     case red, orange, yellow, green, blue, purple
     

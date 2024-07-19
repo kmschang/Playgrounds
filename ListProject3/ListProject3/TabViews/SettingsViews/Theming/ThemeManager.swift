@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
+// MARK: - Theme Manager
 class ThemeManager: ObservableObject {
     @Published var selectedTheme: ThemeColor = .auto
     @Published var customColors: [CustomColor] = []

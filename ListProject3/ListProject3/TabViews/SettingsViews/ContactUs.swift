@@ -82,6 +82,7 @@ struct ContactUs: View {
     }
 }
 
+// MARK: - Preview
 struct ContactUs_Previews: PreviewProvider {
     static var previews: some View {
         // Create a sample ThemeManager for the preview

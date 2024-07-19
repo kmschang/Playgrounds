@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
         
+    // MARK: - Variables
     @State private var infoScreen:Bool = false
     @State private var contactScreen:Bool = false
     
@@ -16,6 +17,7 @@ struct SettingsView: View {
     @ObservedObject var themeManager2: ThemeManager
 
     
+    // MARK: - Body
     var body: some View {
         List {
             
@@ -124,6 +126,7 @@ struct SettingsView: View {
     }
 }
 
+// MARK: - Preview
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a sample ThemeManager for the preview

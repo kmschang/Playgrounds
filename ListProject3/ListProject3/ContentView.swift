@@ -9,12 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // Default page (Settings)(Because I'm working on it)
+    // MARK: - Variables
+    // Default page for now
     @State private var selection = 4;
     
+
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var themeManager: ThemeManager
     
+    // MARK: - Main Body
     var body: some View {
         
         TabView(selection: $selection,
@@ -43,6 +46,7 @@ struct ContentView: View {
     
 }
 
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a sample ThemeManager for the preview
@@ -54,6 +58,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// MARK: - HEX Color Extension
 extension Color {
     init(hex string: String) {
         var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)

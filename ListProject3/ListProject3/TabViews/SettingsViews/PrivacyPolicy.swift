@@ -76,6 +76,7 @@ struct PrivacyPolicy: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     PrivacyPolicy()
 }

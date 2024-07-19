@@ -61,6 +61,7 @@ struct TermsOfUse: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     TermsOfUse()
 }

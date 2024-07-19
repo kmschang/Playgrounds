@@ -124,6 +124,7 @@ private func isValidHexCode(_ code: String) -> Bool {
 }
 
 
+// MARK: - Preview
 #Preview {
     AddCustomColorView(themeManager: ThemeManager())
 }

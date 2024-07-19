@@ -82,6 +82,7 @@ struct AboutDeveloper: View {
     }
 }
 
+// MARK: - Preview
 struct AboutDeveloper_Previews: PreviewProvider {
     static var previews: some View {
         // Create a sample ThemeManager for the preview
