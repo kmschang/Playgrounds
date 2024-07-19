@@ -49,11 +49,16 @@ struct PrivacyPolicy: View {
                     
                     Text("By using Day Calculator, you agree to the collection and use of information in accordance with this Privacy Policy.")
                 }
-                .padding()
+                .font(.system(size: 14, weight: .regular))
             } footer: {
-                VStack {
-                    Text("Sonnaz Group © 2023-2024. All Rights Reserved")
-                    Text("Last Updated: July 18, 2024")
+                HStack {
+                    Spacer()
+                    VStack(alignment: .center) {
+                        Text("Sonnaz Group © 2023-2024. All Rights Reserved")
+                        Text("Last Updated: July 18, 2024")
+                    }
+                    .font(.system(size: 10, weight: .regular))
+                    Spacer()
                 }
             }
             .toolbar {

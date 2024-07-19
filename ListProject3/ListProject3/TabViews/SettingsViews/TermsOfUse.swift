@@ -36,13 +36,16 @@ struct TermsOfUse: View {
                     
                     Text("By using Day Calculator, you acknowledge that you have read these Terms of Use and agree to be bound by them.")
                 }
-                .padding()
-                
-                
+                .font(.system(size: 14, weight: .regular))
             } footer: {
-                VStack {
-                    Text("Sonnaz Group © 2023-2024. All Rights Reserved")
-                    Text("Last Updated: July 18, 2024")
+                HStack {
+                    Spacer()
+                    VStack(alignment: .center) {
+                        Text("Sonnaz Group © 2023-2024. All Rights Reserved")
+                        Text("Last Updated: July 18, 2024")
+                    }
+                    .font(.system(size: 10, weight: .regular))
+                    Spacer()
                 }
             }
             .toolbar {

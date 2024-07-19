@@ -69,7 +69,7 @@ struct SettingsView: View {
                 NavigationLink(destination: Text("About Developer")) {
                     Label("About Developer", systemImage: "person.fill")
                 }
-                NavigationLink(destination: Text("Contact Us")) {
+                NavigationLink(destination: ContactUs()) {
                     Label("Contact Us | Feedback", systemImage: "square.and.pencil")
                 }
                 NavigationLink(destination: PrivacyPolicy()) {

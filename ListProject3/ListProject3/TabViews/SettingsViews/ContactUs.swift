@@ -1,5 +1,5 @@
 //
-//  ContactPopUp.swift
+//  ContactUs.swift
 //  ListProject3
 //
 //  Created by Kyle Schang on 7/18/24.
@@ -7,9 +7,31 @@
 
 import SwiftUI
 
-struct ContactPopUp: View {
+struct ContactItem: View {
+    let iconName: String
+    let linkURL: String
+    let linkText: String
     
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
+    var body: some View {
+        HStack {
+            Image(systemName: iconName)
+                .padding(.trailing, 5)
+            Link(destination: URL(string: linkURL)!) {
+                Text(linkText)
+                    .tint(colorScheme == .dark ? .white : .black)
+            }
+            Spacer()
+            Image(systemName: "arrow.up.right")
+                .opacity(0.3)
+        }
+    }
+}
+
+struct ContactUs: View {
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     var body: some View {
         
@@ -56,14 +78,7 @@ struct ContactPopUp: View {
             }
             
             
-        } .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Label("Back", systemImage: "chevron.down")
-                }
-            }
+        }.toolbar {
             ToolbarItem(placement: .principal) {
                 Text("Contact Us")
                     .fontWeight(.semibold)
@@ -71,11 +86,9 @@ struct ContactPopUp: View {
         }
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
-        
-        
     }
 }
 
 #Preview {
-    ContactPopUp()
+    ContactUs()
 }

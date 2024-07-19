@@ -32,7 +32,7 @@ struct InfoPopUp: View {
                     }
                     HStack {
                         Spacer()
-                        Text("Version \(Bundle.main.releaseVersionNumber ?? "1.0.0").\(Bundle.main.buildVersionNumber ?? "1") (2024)")
+                        Text("Version \(Bundle.main.releaseVersionNumber ?? "1.0.0") (\(Bundle.main.buildVersionNumber ?? "1"))")
                         Spacer()
                     }
                     HStack {
@@ -50,13 +50,19 @@ struct InfoPopUp: View {
                 }
                 
                 Section {
+                    NavigationLink(destination: Versions()) {
+                        Text("Versions")
+                    }
+                }
+                
+                Section {
                     NavigationLink(destination: PrivacyPolicy()) {
                         Text("Privacy Policy")
                     }
                     NavigationLink(destination: TermsOfUse()) {
                         Text("Terms of Use")
                     }
-                    NavigationLink(destination: Text("Contact Us")) {
+                    NavigationLink(destination: ContactUs()) {
                         Text("Contact Us")
                     }
                 }
@@ -97,6 +103,8 @@ struct InfoPopUp: View {
                         .fontWeight(.semibold)
                 }
             }
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
         }
         
             
