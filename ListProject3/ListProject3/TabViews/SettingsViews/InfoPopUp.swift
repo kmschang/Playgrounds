@@ -7,6 +7,25 @@
 
 import SwiftUI
 
+struct assetLink: View {
+    let linkURL: String
+    let linkText: String
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
+    var body: some View {
+        HStack {
+            Link(destination: URL(string: linkURL)!) {
+                Text(linkText)
+                    .tint(colorScheme == .dark ? .white : .black)
+            }
+            Spacer()
+            Image(systemName: "arrow.up.right")
+                .opacity(0.3)
+        }
+    }
+}
+
 struct InfoPopUp: View {
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
@@ -77,14 +96,12 @@ struct InfoPopUp: View {
                 }
                 
                 Section {
-                    Link(destination: URL(string: "https://www.apple.com")!) {
-                        Text("Asset #1")
-                            .tint(colorScheme == .dark ? .white : .black)
-                    }
-                    Link(destination: URL(string: "https://www.apple.com")!) {
-                        Text("Asset #2")
-                            .tint(colorScheme == .dark ? .white : .black)
-                    }
+                    assetLink(linkURL: "https://apple.com",
+                              linkText: "Asset #1")
+                    assetLink(linkURL: "https://apple.com",
+                              linkText: "Asset #2")
+                    assetLink(linkURL: "https://apple.com",
+                              linkText: "Asset #3")
                 } header: {
                     Text("Included Assets")
                 }
