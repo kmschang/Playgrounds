@@ -16,12 +16,7 @@ struct ContactItem: View {
     
     var body: some View {
         HStack {
-            Image(systemName: iconName)
-                .padding(.trailing, 5)
-            Link(destination: URL(string: linkURL)!) {
-                Text(linkText)
-                    .tint(colorScheme == .dark ? .white : .black)
-            }
+            Label(linkText, systemImage: iconName)
             Spacer()
             Image(systemName: "arrow.up.right")
                 .opacity(0.3)
@@ -67,11 +62,7 @@ struct ContactUs: View {
             
             Section {
                 NavigationLink (destination: Versions()) {
-                    HStack {
-                        Image(systemName: "square.stack.3d.up")
-                            .padding(.trailing, 5)
-                        Text("Versions")
-                    }
+                    Label("Versions", systemImage: "square.stack.3d.up.fill")
                 }
             } header: {
                 Text("Versions")
