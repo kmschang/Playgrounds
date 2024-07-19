@@ -48,6 +48,14 @@ struct ThemeSelectionView: View {
             }
             
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("App Theme")
+                    .fontWeight(.semibold)
+            }
+        }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingAddCustomColor) {
             AddCustomColorView(themeManager: themeManager)
         }
