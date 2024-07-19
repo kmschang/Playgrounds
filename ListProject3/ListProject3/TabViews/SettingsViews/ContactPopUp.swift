@@ -44,6 +44,15 @@ struct ContactPopUp: View {
             }
             
             Section {
+                NavigationLink(destination: AboutApp()) {
+                    Label("About App", systemImage: "list.bullet.clipboard.fill")
+                }
+                NavigationLink(destination: AboutDeveloper()) {
+                    Label("About Developer", systemImage: "person.fill")
+                }
+            }
+            
+            Section {
                 NavigationLink (destination: Versions()) {
                     Label("Versions", systemImage: "square.stack.3d.up.fill")
                 }
@@ -72,6 +81,13 @@ struct ContactPopUp: View {
     }
 }
 
-#Preview {
-    ContactPopUp()
+struct ContactUsPopUp_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample ThemeManager for the preview
+        let themeManager = ThemeManager()
+        themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
+        
+        return ContactPopUp()
+            .environmentObject(themeManager) // Inject the sample ThemeManager
+    }
 }

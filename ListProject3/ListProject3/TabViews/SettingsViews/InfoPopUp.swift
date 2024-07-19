@@ -137,7 +137,7 @@ struct InfoPopUp_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
         
-        return ContentView()
+        return InfoPopUp()
             .environmentObject(themeManager) // Inject the sample ThemeManager
     }
 }

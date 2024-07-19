@@ -21,6 +21,7 @@ struct ShareItem: View {
                 .resizable()
                 .frame(width: 20, height: 20)
                 .padding(.trailing, 5)
+                .foregroundStyle(themeManager.selectedTheme.color)
             Link(destination: URL(string: linkURL)!) {
                 Text(linkText)
                     .tint(colorScheme == .dark ? .white : .black)
@@ -112,7 +113,7 @@ struct AboutApp_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
         
-        return ContentView()
+        return AboutApp()
             .environmentObject(themeManager) // Inject the sample ThemeManager
     }
 }
