@@ -50,10 +50,10 @@ struct InfoPopUp: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: Text("Privacy Policy")) {
+                    NavigationLink(destination: PrivacyPolicy()) {
                         Text("Privacy Policy")
                     }
-                    NavigationLink(destination: Text("Terms of Use")) {
+                    NavigationLink(destination: TermsOfUse()) {
                         Text("Terms of Use")
                     }
                     NavigationLink(destination: Text("Contact Us")) {
@@ -94,6 +94,7 @@ struct InfoPopUp: View {
                 }
                 ToolbarItem(placement: .principal) {
                     Text("About")
+                        .fontWeight(.semibold)
                 }
             }
         }

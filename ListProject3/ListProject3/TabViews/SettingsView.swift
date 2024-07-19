@@ -72,10 +72,10 @@ struct SettingsView: View {
                 NavigationLink(destination: Text("Contact Us")) {
                     Label("Contact Us | Feedback", systemImage: "square.and.pencil")
                 }
-                NavigationLink(destination: Text("Privacy Policy")) {
+                NavigationLink(destination: PrivacyPolicy()) {
                     Label("Privacy Policy", systemImage: "exclamationmark.shield.fill")
                 }
-                NavigationLink(destination: Text("Terms of Use")) {
+                NavigationLink(destination: TermsOfUse()) {
                     Label("Terms of Use", systemImage: "hand.tap.fill")
                 }
             } header: {

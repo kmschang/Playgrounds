@@ -14,6 +14,8 @@
 		0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838B42C49B1FF00D8C449 /* SettingsView.swift */; };
 		0E3838B82C49D0D700D8C449 /* InfoPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */; };
 		0E3838BA2C49D0E300D8C449 /* ContactPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */; };
+		0E3838BC2C49E42A00D8C449 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */; };
+		0E3838BE2C49E73000D8C449 /* TermsOfUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838BD2C49E73000D8C449 /* TermsOfUse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		0E3838B42C49B1FF00D8C449 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopUp.swift; sourceTree = "<group>"; };
 		0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPopUp.swift; sourceTree = "<group>"; };
+		0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		0E3838BD2C49E73000D8C449 /* TermsOfUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			children = (
 				0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */,
 				0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */,
+				0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */,
+				0E3838BD2C49E73000D8C449 /* TermsOfUse.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
 				0E3838B82C49D0D700D8C449 /* InfoPopUp.swift in Sources */,
+				0E3838BE2C49E73000D8C449 /* TermsOfUse.swift in Sources */,
 				0E3838BA2C49D0E300D8C449 /* ContactPopUp.swift in Sources */,
+				0E3838BC2C49E42A00D8C449 /* PrivacyPolicy.swift in Sources */,
 				0E3838A62C49ABB200D8C449 /* ListProject3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
