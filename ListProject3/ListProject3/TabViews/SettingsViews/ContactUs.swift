@@ -18,7 +18,16 @@ struct ContactItem: View {
     
     var body: some View {
         HStack {
-            Label(linkText, systemImage: iconName)
+            Image(systemName: iconName)
+                .padding(.trailing, 5)
+                .foregroundStyle(themeManager.selectedTheme.color)
+            Link(linkText, destination: URL(string: linkURL)!)
+            .environment(\.openURL, OpenURLAction { _ in
+                            print("---> testing link actioned")
+                            return .systemAction
+                        })
+            .foregroundStyle(colorScheme == .dark ? .white : .black)
+            
             Spacer()
             Image(systemName: "arrow.up.right")
                 .foregroundStyle(themeManager.selectedTheme.color)
@@ -35,8 +44,7 @@ struct ContactUs: View {
         List {
             
             Section {
-                // Update Contact Information Before Publishing
-                // TODO Update Contact Information
+                // TODO: Update Contact Information
                 ContactItem(iconName: "envelope.fill",
                             linkURL: "mailto:support@sonnazgroup.com",
                             linkText: "support@sonnazgroup.com")
@@ -51,7 +59,7 @@ struct ContactUs: View {
             }
             
             Section {
-                // Update the links for leaving comments and rating
+                // TODO: Update the links for leaving comments and rating
                 ContactItem(iconName: "star.fill",
                             linkURL: "https://apple.com",
                             linkText: "Leave a rating")
