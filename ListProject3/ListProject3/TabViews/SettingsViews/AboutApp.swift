@@ -39,7 +39,7 @@ struct AboutApp: View {
             
             Section {
                 
-                Image("DayCalculatorLogoRounded2_Red")
+                Image("TestingAppLogo_Red")
                     .resizable()
                     .listRowBackground(Color.red.opacity(0))
                     .frame(width: UIScreen.main.bounds.size.width / 1.25, height: UIScreen.main.bounds.size.width / 1.25, alignment: .center)
