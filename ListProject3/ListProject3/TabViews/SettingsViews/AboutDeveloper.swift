@@ -13,7 +13,7 @@ struct AboutDeveloper: View {
             
             Section {
                 
-                Image("SonnazGroupLogo_RedTransparent")
+                Image("SonnazGroupLogo")
                     .resizable()
                     .listRowBackground(Color.red.opacity(0))
                     .frame(width: UIScreen.main.bounds.size.width / 1.25, height: UIScreen.main.bounds.size.width / 1.25, alignment: .center)
