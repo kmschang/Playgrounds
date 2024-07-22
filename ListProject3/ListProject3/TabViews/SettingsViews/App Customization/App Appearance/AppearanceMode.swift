@@ -11,5 +11,4 @@ enum AppearanceMode: String, CaseIterable {
     case automatic
     case light
     case dark
-    case black
 }

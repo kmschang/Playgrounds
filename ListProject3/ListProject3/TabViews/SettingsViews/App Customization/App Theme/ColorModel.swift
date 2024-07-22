@@ -41,7 +41,7 @@ enum ThemeColor: Identifiable, Codable, Equatable {
     var id: String {
         switch self {
         case .auto:
-            return "auto"
+            return "automatic"
         case .default(let color):
             return "default_\(color.rawValue)"
         case .custom(let color):
@@ -52,7 +52,7 @@ enum ThemeColor: Identifiable, Codable, Equatable {
     var name: String {
         switch self {
         case .auto:
-            return "Auto"
+            return "Automatic"
         case .default(let color):
             return color.name
         case .custom(let color):

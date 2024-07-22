@@ -13,7 +13,7 @@ struct ThemeSelectionView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Auto")) {
+            Section(header: Text("Automatic")) {
                 ThemeRow(theme: .auto, isSelected: themeManager.selectedTheme == .auto) {
                     themeManager.selectTheme(.auto)
                 }

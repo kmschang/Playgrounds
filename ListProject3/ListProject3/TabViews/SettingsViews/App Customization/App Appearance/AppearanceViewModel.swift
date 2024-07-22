@@ -24,9 +24,6 @@ class AppearanceViewModel: ObservableObject {
             setUserInterfaceStyle(.light)
         case .dark:
             setUserInterfaceStyle(.dark)
-        case .black:
-            setUserInterfaceStyle(.dark)
-            // Additional customization for black mode if needed
         }
     }
     

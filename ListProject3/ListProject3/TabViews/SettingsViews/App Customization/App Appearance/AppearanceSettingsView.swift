@@ -17,7 +17,7 @@ struct AppearanceSettingsView: View {
                     AppearanceRow(mode: .automatic, selectedMode: $viewModel.selectedMode)
                 }
                 
-                Section(header: Text("Default Appearances")) {
+                Section(header: Text("Manual Selection")) {
                     ForEach(AppearanceMode.allCases.filter { $0 != .automatic }, id: \.self) { mode in
                         AppearanceRow(mode: mode, selectedMode: $viewModel.selectedMode)
                     }
