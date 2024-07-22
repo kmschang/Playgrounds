@@ -23,15 +23,16 @@ struct AppearanceSettingsView: View {
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("App Appearance")
-                        .fontWeight(.semibold)
-                }
-            }
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
+            
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("App Appearance")
+                    .fontWeight(.semibold)
+            }
+        }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

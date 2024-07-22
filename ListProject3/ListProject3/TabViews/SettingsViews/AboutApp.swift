@@ -42,9 +42,7 @@ struct AboutApp: View {
     @EnvironmentObject var appearanceViewModel: AppearanceViewModel
         
     var body: some View {
-        
-        AppearanceSettingsView(viewModel: appearanceViewModel)
-        
+                
         List {
             
             Section {
