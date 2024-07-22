@@ -13,7 +13,7 @@ struct AppearanceSettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Automatic")) {
+                Section(header: Text("System")) {
                     AppearanceRow(mode: .automatic, selectedMode: $viewModel.selectedMode)
                 }
                 
@@ -44,7 +44,7 @@ struct AppearanceRow: View {
     
     var body: some View {
         HStack {
-            Text(mode.rawValue.capitalized)
+            Text(mode == .automatic ? "System" : mode.rawValue.capitalized)
             Spacer()
             if selectedMode == mode {
                 Image(systemName: "checkmark")
