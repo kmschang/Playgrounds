@@ -22,8 +22,14 @@ struct AppIconSelectionView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
-        .navigationTitle("App Icon")
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("App Icon")
+                    .fontWeight(.semibold)
+            }
+        }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     private func iconRow(for icon: AppIcon) -> some View {
@@ -32,7 +38,7 @@ struct AppIconSelectionView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
-                .cornerRadius(12)
+                .padding(.trailing, 5)
             
             Text(icon.displayName)
             
@@ -43,7 +49,6 @@ struct AppIconSelectionView: View {
                     .foregroundColor(.blue)
             }
         }
-        .contentShape(Rectangle())
         .onTapGesture {
             viewModel.changeIcon(to: icon)
         }

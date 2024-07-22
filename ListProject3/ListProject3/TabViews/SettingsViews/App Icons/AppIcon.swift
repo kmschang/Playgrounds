@@ -8,7 +8,7 @@
 import Foundation
 
 enum AppIcon: String, CaseIterable, Identifiable {
-    case `default` = "AppIcon"
+    case `default` = "DefaultAppIcon"
     case red = "RedAppIcon"
     case orange = "OrangeAppIcon"
     case yellow = "YellowAppIcon"
@@ -21,7 +21,7 @@ enum AppIcon: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     
     var previewName: String {
-        self == .default ? "AppIcon" : "\(rawValue)_Preview"
+        self == .default ? "DefaultAppIcon_Preview" : "\(rawValue)_Preview"
     }
     
     var displayName: String {
