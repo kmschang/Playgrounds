@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - ShareItem Template
 struct ShareItem: View {
     let iconName: String
     let linkURL: String
@@ -33,6 +34,7 @@ struct ShareItem: View {
     }
 }
 
+// MARK: - Main View
 struct AboutApp: View {
     
     @EnvironmentObject var iconManager: AppIconManager
