@@ -24,6 +24,9 @@
 		0E60578D2C4AB04500BD821A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E60578C2C4AB04500BD821A /* ThemeManager.swift */; };
 		0E60578F2C4AB07B00BD821A /* ThemeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */; };
 		0E6057912C4AB0A700BD821A /* AddCustomColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */; };
+		0EE374AD2C4E95DB00877778 /* AppIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374AC2C4E95DB00877778 /* AppIconModel.swift */; };
+		0EE374AF2C4E9A2600877778 /* AppIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374AE2C4E9A2600877778 /* AppIconManager.swift */; };
+		0EE374B12C4E9A4500877778 /* AppIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B02C4E9A4500877778 /* AppIconSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		0E60578C2C4AB04500BD821A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionView.swift; sourceTree = "<group>"; };
 		0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomColorView.swift; sourceTree = "<group>"; };
+		0EE374AC2C4E95DB00877778 /* AppIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconModel.swift; sourceTree = "<group>"; };
+		0EE374AE2C4E9A2600877778 /* AppIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconManager.swift; sourceTree = "<group>"; };
+		0EE374B02C4E9A4500877778 /* AppIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +112,8 @@
 		0E3838B62C49B32800D8C449 /* SettingsViews */ = {
 			isa = PBXGroup;
 			children = (
-				0E6057892C4AAFFD00BD821A /* Theming */,
+				0EE374A92C4E929200877778 /* App Icons */,
+				0E6057892C4AAFFD00BD821A /* App Theme */,
 				0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */,
 				0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */,
 				0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */,
@@ -119,7 +126,7 @@
 			path = SettingsViews;
 			sourceTree = "<group>";
 		};
-		0E6057892C4AAFFD00BD821A /* Theming */ = {
+		0E6057892C4AAFFD00BD821A /* App Theme */ = {
 			isa = PBXGroup;
 			children = (
 				0E60578A2C4AB00A00BD821A /* ColorModel.swift */,
@@ -127,7 +134,17 @@
 				0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */,
 				0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */,
 			);
-			path = Theming;
+			path = "App Theme";
+			sourceTree = "<group>";
+		};
+		0EE374A92C4E929200877778 /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				0EE374AC2C4E95DB00877778 /* AppIconModel.swift */,
+				0EE374AE2C4E9A2600877778 /* AppIconManager.swift */,
+				0EE374B02C4E9A4500877778 /* AppIconSelectionView.swift */,
+			);
+			path = "App Icons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +219,14 @@
 			files = (
 				0E60578F2C4AB07B00BD821A /* ThemeSelectionView.swift in Sources */,
 				0E6057912C4AB0A700BD821A /* AddCustomColorView.swift in Sources */,
+				0EE374B12C4E9A4500877778 /* AppIconSelectionView.swift in Sources */,
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
 				0E3838C02C49E9B600D8C449 /* Versions.swift in Sources */,
 				0E3838B82C49D0D700D8C449 /* InfoPopUp.swift in Sources */,
 				0E3838BE2C49E73000D8C449 /* TermsOfUse.swift in Sources */,
+				0EE374AD2C4E95DB00877778 /* AppIconModel.swift in Sources */,
+				0EE374AF2C4E9A2600877778 /* AppIconManager.swift in Sources */,
 				0E3838BA2C49D0E300D8C449 /* ContactPopUp.swift in Sources */,
 				0E60578B2C4AB00A00BD821A /* ColorModel.swift in Sources */,
 				0E3838BC2C49E42A00D8C449 /* PrivacyPolicy.swift in Sources */,
@@ -345,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ListProject3/Preview Content\"";
@@ -374,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ListProject3/Preview Content\"";
