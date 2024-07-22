@@ -119,14 +119,8 @@
 			children = (
 				0E3838B42C49B1FF00D8C449 /* SettingsView.swift */,
 				0EE374C12C4EBAEE00877778 /* App Customization */,
-				0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */,
-				0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */,
-				0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */,
-				0E3838BD2C49E73000D8C449 /* TermsOfUse.swift */,
-				0E3838BF2C49E9B600D8C449 /* Versions.swift */,
-				0E3838C12C49F29800D8C449 /* ContactUs.swift */,
-				0E3838C32C49FC8E00D8C449 /* AboutApp.swift */,
-				0E3838C52C4A038900D8C449 /* AboutDeveloper.swift */,
+				0EE374CF2C4ECACD00877778 /* PopUp's */,
+				0EE374D02C4ECADA00877778 /* About */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -170,6 +164,28 @@
 				0E6057892C4AAFFD00BD821A /* App Theme */,
 			);
 			path = "App Customization";
+			sourceTree = "<group>";
+		};
+		0EE374CF2C4ECACD00877778 /* PopUp's */ = {
+			isa = PBXGroup;
+			children = (
+				0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */,
+				0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */,
+			);
+			path = "PopUp's";
+			sourceTree = "<group>";
+		};
+		0EE374D02C4ECADA00877778 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */,
+				0E3838BD2C49E73000D8C449 /* TermsOfUse.swift */,
+				0E3838BF2C49E9B600D8C449 /* Versions.swift */,
+				0E3838C12C49F29800D8C449 /* ContactUs.swift */,
+				0E3838C32C49FC8E00D8C449 /* AboutApp.swift */,
+				0E3838C52C4A038900D8C449 /* AboutDeveloper.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
