@@ -109,7 +109,6 @@
 		0E3838B32C49B1EF00D8C449 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
-				0E3838B42C49B1FF00D8C449 /* SettingsView.swift */,
 				0E3838B62C49B32800D8C449 /* SettingsViews */,
 			);
 			path = TabViews;
@@ -118,9 +117,8 @@
 		0E3838B62C49B32800D8C449 /* SettingsViews */ = {
 			isa = PBXGroup;
 			children = (
-				0EE374B82C4EB49F00877778 /* App Appearance */,
-				0EE374A92C4E929200877778 /* App Icons */,
-				0E6057892C4AAFFD00BD821A /* App Theme */,
+				0E3838B42C49B1FF00D8C449 /* SettingsView.swift */,
+				0EE374C12C4EBAEE00877778 /* App Customization */,
 				0E3838B72C49D0D700D8C449 /* InfoPopUp.swift */,
 				0E3838B92C49D0E300D8C449 /* ContactPopUp.swift */,
 				0E3838BB2C49E42A00D8C449 /* PrivacyPolicy.swift */,
@@ -162,6 +160,16 @@
 				0EE374BF2C4EB4FF00877778 /* AppearanceSettingsView.swift */,
 			);
 			path = "App Appearance";
+			sourceTree = "<group>";
+		};
+		0EE374C12C4EBAEE00877778 /* App Customization */ = {
+			isa = PBXGroup;
+			children = (
+				0EE374B82C4EB49F00877778 /* App Appearance */,
+				0EE374A92C4E929200877778 /* App Icons */,
+				0E6057892C4AAFFD00BD821A /* App Theme */,
+			);
+			path = "App Customization";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
