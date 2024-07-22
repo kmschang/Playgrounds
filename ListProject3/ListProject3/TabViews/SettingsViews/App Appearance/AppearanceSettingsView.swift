@@ -23,7 +23,14 @@ struct AppearanceSettingsView: View {
                     }
                 }
             }
-            .navigationTitle("Appearance Settings")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("App Appearance")
+                        .fontWeight(.semibold)
+                }
+            }
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
