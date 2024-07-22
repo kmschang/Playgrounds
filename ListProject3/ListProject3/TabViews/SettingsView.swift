@@ -137,6 +137,7 @@ struct SettingsView_Previews: PreviewProvider {
         return NavigationView {
             SettingsView(themeManager2: ThemeManager())
                 .environmentObject(sampleThemeManager) // Inject the sample ThemeManager
+                .environmentObject(AppearanceViewModel())
         }
     }
 }
