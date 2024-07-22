@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AppIconSelectionView: View {
     @StateObject private var viewModel = AppIconViewModel()
+    @EnvironmentObject var themeManager: ThemeManager
+
     
     var body: some View {
         List {
@@ -46,7 +48,7 @@ struct AppIconSelectionView: View {
             
             if viewModel.currentIcon == icon {
                 Image(systemName: "checkmark")
-                    .foregroundColor(.blue)
+                    .foregroundColor(themeManager.selectedTheme.color)
             }
         }
         .onTapGesture {
@@ -55,6 +57,11 @@ struct AppIconSelectionView: View {
     }
 }
 
-#Preview {
-    AppIconSelectionView()
+struct AppIconSelectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            AppIconSelectionView()
+                .environmentObject(ThemeManager()) // Add a mock ThemeManager
+        }
+    }
 }
