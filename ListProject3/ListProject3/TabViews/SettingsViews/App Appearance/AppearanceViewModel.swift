@@ -19,16 +19,26 @@ class AppearanceViewModel: ObservableObject {
     private func applyAppearanceMode() {
         switch selectedMode {
         case .automatic:
-            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .unspecified
+            setUserInterfaceStyle(.unspecified)
         case .light:
-            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
+            setUserInterfaceStyle(.light)
         case .dark:
-            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
+            setUserInterfaceStyle(.dark)
         case .black:
-            if #available(iOS 13.0, *) {
-                UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
-                // Additional customization for black mode if needed
-            }
+            setUserInterfaceStyle(.dark)
+            // Additional customization for black mode if needed
+        }
+    }
+    
+    private func setUserInterfaceStyle(_ style: UIUserInterfaceStyle) {
+        if #available(iOS 15.0, *) {
+            // Use the new API for iOS 15 and later
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let window = windowScene.windows.first else { return }
+            window.overrideUserInterfaceStyle = style
+        } else {
+            // Fallback for earlier iOS versions
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = style
         }
     }
 }

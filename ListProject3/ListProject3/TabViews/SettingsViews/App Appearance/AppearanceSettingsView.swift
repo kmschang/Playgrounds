@@ -32,13 +32,15 @@ struct AppearanceRow: View {
     let mode: AppearanceMode
     @Binding var selectedMode: AppearanceMode
     
+    @EnvironmentObject var themeManager: ThemeManager
+    
     var body: some View {
         HStack {
             Text(mode.rawValue.capitalized)
             Spacer()
             if selectedMode == mode {
                 Image(systemName: "checkmark")
-                    .foregroundColor(.blue)
+                    .foregroundColor(themeManager.selectedTheme.color)
             }
         }
         .contentShape(Rectangle())
@@ -53,10 +55,13 @@ struct AppearanceSettingsView_Previews: PreviewProvider {
         Group {
             AppearanceSettingsView(viewModel: AppearanceViewModel())
                 .previewDisplayName("Light Mode")
+                .environmentObject(ThemeManager())
+
             
             AppearanceSettingsView(viewModel: AppearanceViewModel())
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark Mode")
+                .environmentObject(ThemeManager())
         }
     }
 }
