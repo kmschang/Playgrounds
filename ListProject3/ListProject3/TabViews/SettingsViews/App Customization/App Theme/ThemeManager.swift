@@ -36,8 +36,13 @@ class ThemeManager: ObservableObject {
     }
     
     func removeCustomColor(at offsets: IndexSet) {
+        for index in offsets {
+            let colorToDelete = customColors[index]
+            if selectedTheme == .custom(colorToDelete) {
+                selectedTheme = .auto // or select a default color
+            }
+        }
         customColors.remove(atOffsets: offsets)
-        saveCustomColors()
     }
     
     private func saveTheme() {

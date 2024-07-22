@@ -17,22 +17,26 @@ struct CustomColor: Identifiable, Codable {
     var color: Color {
         Color(hex: hexCode)
     }
+    
+    static func == (lhs: CustomColor, rhs: CustomColor) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 // MARK: - Theme Color Item
 enum ThemeColor: Identifiable, Codable, Equatable {
     static func == (lhs: ThemeColor, rhs: ThemeColor) -> Bool {
-            switch (lhs, rhs) {
-            case (.auto, .auto):
-                return true
-            case (.default(let lhsColor), .default(let rhsColor)):
-                return lhsColor == rhsColor
-            case (.custom(let lhsColor), .custom(let rhsColor)):
-                return lhsColor.id == rhsColor.id
-            default:
-                return false
-            }
+        switch (lhs, rhs) {
+        case (.auto, .auto):
+            return true
+        case (let .default(lhsColor), let .default(rhsColor)):
+            return lhsColor == rhsColor
+        case (let .custom(lhsColor), let .custom(rhsColor)):
+            return lhsColor == rhsColor
+        default:
+            return false
         }
+    }
     
     case auto
     case `default`(DefaultColor)

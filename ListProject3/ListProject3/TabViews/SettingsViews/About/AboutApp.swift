@@ -23,6 +23,7 @@ struct ShareItem: View {
                 .resizable()
                 .frame(width: 20, height: 20)
                 .padding(.trailing, 5)
+                .padding(.leading, 4)
                 .foregroundStyle(themeManager.selectedTheme.color)
             Link(destination: URL(string: linkURL)!) {
                 Text(linkText)
