@@ -24,9 +24,9 @@
 		0E60578D2C4AB04500BD821A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E60578C2C4AB04500BD821A /* ThemeManager.swift */; };
 		0E60578F2C4AB07B00BD821A /* ThemeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */; };
 		0E6057912C4AB0A700BD821A /* AddCustomColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */; };
-		0EE374AD2C4E95DB00877778 /* AppIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374AC2C4E95DB00877778 /* AppIconModel.swift */; };
-		0EE374AF2C4E9A2600877778 /* AppIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374AE2C4E9A2600877778 /* AppIconManager.swift */; };
-		0EE374B12C4E9A4500877778 /* AppIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B02C4E9A4500877778 /* AppIconSelectionView.swift */; };
+		0EE374B32C4EA80C00877778 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B22C4EA80C00877778 /* AppIcon.swift */; };
+		0EE374B52C4EA81500877778 /* AppIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B42C4EA81500877778 /* AppIconModel.swift */; };
+		0EE374B72C4EA82200877778 /* AppIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B62C4EA82200877778 /* AppIconSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +48,9 @@
 		0E60578C2C4AB04500BD821A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionView.swift; sourceTree = "<group>"; };
 		0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomColorView.swift; sourceTree = "<group>"; };
-		0EE374AC2C4E95DB00877778 /* AppIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconModel.swift; sourceTree = "<group>"; };
-		0EE374AE2C4E9A2600877778 /* AppIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconManager.swift; sourceTree = "<group>"; };
-		0EE374B02C4E9A4500877778 /* AppIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSelectionView.swift; sourceTree = "<group>"; };
+		0EE374B22C4EA80C00877778 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		0EE374B42C4EA81500877778 /* AppIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconModel.swift; sourceTree = "<group>"; };
+		0EE374B62C4EA82200877778 /* AppIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +140,9 @@
 		0EE374A92C4E929200877778 /* App Icons */ = {
 			isa = PBXGroup;
 			children = (
-				0EE374AC2C4E95DB00877778 /* AppIconModel.swift */,
-				0EE374AE2C4E9A2600877778 /* AppIconManager.swift */,
-				0EE374B02C4E9A4500877778 /* AppIconSelectionView.swift */,
+				0EE374B22C4EA80C00877778 /* AppIcon.swift */,
+				0EE374B42C4EA81500877778 /* AppIconModel.swift */,
+				0EE374B62C4EA82200877778 /* AppIconSelectionView.swift */,
 			);
 			path = "App Icons";
 			sourceTree = "<group>";
@@ -219,14 +219,14 @@
 			files = (
 				0E60578F2C4AB07B00BD821A /* ThemeSelectionView.swift in Sources */,
 				0E6057912C4AB0A700BD821A /* AddCustomColorView.swift in Sources */,
-				0EE374B12C4E9A4500877778 /* AppIconSelectionView.swift in Sources */,
+				0EE374B72C4EA82200877778 /* AppIconSelectionView.swift in Sources */,
+				0EE374B32C4EA80C00877778 /* AppIcon.swift in Sources */,
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
 				0E3838C02C49E9B600D8C449 /* Versions.swift in Sources */,
 				0E3838B82C49D0D700D8C449 /* InfoPopUp.swift in Sources */,
 				0E3838BE2C49E73000D8C449 /* TermsOfUse.swift in Sources */,
-				0EE374AD2C4E95DB00877778 /* AppIconModel.swift in Sources */,
-				0EE374AF2C4E9A2600877778 /* AppIconManager.swift in Sources */,
+				0EE374B52C4EA81500877778 /* AppIconModel.swift in Sources */,
 				0E3838BA2C49D0E300D8C449 /* ContactPopUp.swift in Sources */,
 				0E60578B2C4AB00A00BD821A /* ColorModel.swift in Sources */,
 				0E3838BC2C49E42A00D8C449 /* PrivacyPolicy.swift in Sources */,

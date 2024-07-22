@@ -47,7 +47,7 @@ struct SettingsView: View {
                 NavigationLink(destination: ThemeSelectionView(themeManager: themeManager)) {
                     Label("App Theme", systemImage: "paintpalette.fill")
                 }
-                NavigationLink(destination: AppIconView().environmentObject(themeManager)) {
+                NavigationLink(destination: AppIconSelectionView().environmentObject(themeManager)) {
                     Label("App Icons", systemImage: "app.badge.checkmark.fill")
                 }
             } header: {

@@ -36,6 +36,7 @@ struct ContentView: View {
                 .tag(3)
             NavigationView {
                 SettingsView(themeManager2: ThemeManager())
+                    .environmentObject(themeManager)
             } .tabItem { Label("Settings", systemImage: "gear") }
                 .tag(4)
         })
