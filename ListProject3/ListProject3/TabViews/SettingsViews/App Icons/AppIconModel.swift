@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - App Icons
 enum AppIcon: String, CaseIterable, Identifiable {
-    case primary = "RedAppIcon"  // Default icon
+    case primary = ""  // Default icon
     case red, orange, yellow, green, blue, purple, black, white
     
     var id: String { self.rawValue }
@@ -29,7 +29,7 @@ enum AppIcon: String, CaseIterable, Identifiable {
         }
     }
     
-    var previewfileName: String {
+    var previewFileName: String {
         switch self {
         case .primary: return "RedAppIcon_Preview"  // Assuming this is your default app icon name
         case .red: return "RedAppIcon_Preview"

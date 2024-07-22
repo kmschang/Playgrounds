@@ -9,16 +9,17 @@ import SwiftUI
 
 struct AppIconView: View {
     @StateObject private var iconManager = AppIconManager()
+    @EnvironmentObject var themeManager: ThemeManager // Add this line
     
     var body: some View {
         List {
             Section(header: Text("Default")) {
-                AppIconList(icon: .primary, iconManager: iconManager)
+                AppIconList(icon: .primary, iconManager: iconManager, themeColor: themeManager.selectedTheme.color)
             }
             
             Section(header: Text("Color Options")) {
                 ForEach(AppIcon.allCases.filter { $0 != .primary }) { icon in
-                    AppIconList(icon: icon, iconManager: iconManager)
+                    AppIconList(icon: icon, iconManager: iconManager, themeColor: themeManager.selectedTheme.color)
                 }
             }
         }
@@ -30,10 +31,11 @@ struct AppIconView: View {
 struct AppIconList: View {
     let icon: AppIcon
     @ObservedObject var iconManager: AppIconManager
+    let themeColor: Color // Add this line
     
     var body: some View {
         HStack {
-            Image(icon.previewfileName)
+            Image(icon.previewFileName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
@@ -45,7 +47,7 @@ struct AppIconList: View {
             
             if iconManager.currentIcon == icon {
                 Image(systemName: "checkmark")
-                    .foregroundColor(.blue)
+                    .foregroundColor(themeColor) // Use the theme color here
             }
         }
         .contentShape(Rectangle())
@@ -55,10 +57,12 @@ struct AppIconList: View {
     }
 }
 
+// MARK: - PREVIEW
 struct AppIconView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AppIconView()
+                .environmentObject(ThemeManager()) // Add this line for the preview
         }
     }
 }

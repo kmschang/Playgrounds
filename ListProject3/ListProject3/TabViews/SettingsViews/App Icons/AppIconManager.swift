@@ -29,4 +29,9 @@ class AppIconManager: ObservableObject {
             }
         }
     }
+    
+    var currentIconPreviewFileName: String {
+        return currentIcon.previewFileName
+    }
 }
+
