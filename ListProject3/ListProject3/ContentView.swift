@@ -55,8 +55,12 @@ struct ContentView_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
         
+        // Create a sample AppearanceViewModel for the preview
+        let appearanceViewModel = AppearanceViewModel()
+        
         return ContentView()
             .environmentObject(themeManager) // Inject the sample ThemeManager
+            .environmentObject(appearanceViewModel) // Inject the sample AppearanceViewModel
     }
 }
 
