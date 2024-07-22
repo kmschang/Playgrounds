@@ -15,6 +15,7 @@ struct ShareItem: View {
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var themeManager: ThemeManager
+
     
     var body: some View {
         HStack {
@@ -38,8 +39,12 @@ struct ShareItem: View {
 struct AboutApp: View {
     
     @StateObject private var iconViewModel = AppIconViewModel()
+    @EnvironmentObject var appearanceViewModel: AppearanceViewModel
         
     var body: some View {
+        
+        AppearanceSettingsView(viewModel: appearanceViewModel)
+        
         List {
             
             Section {
@@ -119,7 +124,12 @@ struct AboutApp_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         themeManager.selectedTheme = .default(.blue) // Set a default theme for the preview
         
+        // Create a sample AppearanceViewModel for the preview
+        let appearanceViewModel = AppearanceViewModel()
+        appearanceViewModel.selectedMode = .automatic // Set a default appearance mode for the preview
+        
         return AboutApp()
             .environmentObject(themeManager) // Inject the sample ThemeManager
+            .environmentObject(appearanceViewModel) // Inject the sample AppearanceViewModel
     }
 }

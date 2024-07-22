@@ -15,6 +15,7 @@ struct SettingsView: View {
     
     @EnvironmentObject var themeManager: ThemeManager
     @ObservedObject var themeManager2: ThemeManager
+    @EnvironmentObject var appearanceViewModel: AppearanceViewModel
 
     
     // MARK: - Body
@@ -41,7 +42,7 @@ struct SettingsView: View {
             }
             
             Section {
-                NavigationLink(destination: Text("App Appearance")) {
+                NavigationLink(destination: AppearanceSettingsView(viewModel: appearanceViewModel)) {
                     Label("App Appearance", systemImage: "paintbrush.fill")
                 }
                 NavigationLink(destination: ThemeSelectionView(themeManager: themeManager)) {

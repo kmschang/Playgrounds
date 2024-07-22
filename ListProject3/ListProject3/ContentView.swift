@@ -16,6 +16,7 @@ struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var themeManager: ThemeManager
+
     
     // MARK: - Main Body
     var body: some View {

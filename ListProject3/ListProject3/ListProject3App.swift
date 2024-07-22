@@ -11,11 +11,14 @@ import SwiftUI
 struct ListProject3App: App {
     
     @StateObject private var themeManager = ThemeManager()
+    @StateObject private var appearanceViewModel = AppearanceViewModel()
+
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(themeManager)
+                .environmentObject(appearanceViewModel)
         }
     }
 }
