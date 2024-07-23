@@ -28,6 +28,8 @@
 		0EE374BC2C4EB4E000877778 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374BB2C4EB4E000877778 /* AppearanceMode.swift */; };
 		0EE374BE2C4EB4EA00877778 /* AppearanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374BD2C4EB4EA00877778 /* AppearanceViewModel.swift */; };
 		0EE374C02C4EB4FF00877778 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374BF2C4EB4FF00877778 /* AppearanceSettingsView.swift */; };
+		0EE374DE2C4F3A9D00877778 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374DD2C4F3A9D00877778 /* TodayView.swift */; };
+		0EE374E12C4F5AD200877778 /* TimeMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374E02C4F5AD200877778 /* TimeMachineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		0EE374BB2C4EB4E000877778 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
 		0EE374BD2C4EB4EA00877778 /* AppearanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewModel.swift; sourceTree = "<group>"; };
 		0EE374BF2C4EB4FF00877778 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		0EE374DD2C4F3A9D00877778 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		0EE374E02C4F5AD200877778 /* TimeMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		0E3838B32C49B1EF00D8C449 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
+				0EE374DF2C4F5AC200877778 /* TimeMachineView */,
+				0EE374DC2C4F3A8F00877778 /* TodayView */,
 				0E3838B62C49B32800D8C449 /* SettingsViews */,
 			);
 			path = TabViews;
@@ -172,6 +178,22 @@
 				0E3838C52C4A038900D8C449 /* AboutDeveloper.swift */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		0EE374DC2C4F3A8F00877778 /* TodayView */ = {
+			isa = PBXGroup;
+			children = (
+				0EE374DD2C4F3A9D00877778 /* TodayView.swift */,
+			);
+			path = TodayView;
+			sourceTree = "<group>";
+		};
+		0EE374DF2C4F5AC200877778 /* TimeMachineView */ = {
+			isa = PBXGroup;
+			children = (
+				0EE374E02C4F5AD200877778 /* TimeMachineView.swift */,
+			);
+			path = TimeMachineView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +271,7 @@
 				0EE374B72C4EA82200877778 /* AppIconSelectionView.swift in Sources */,
 				0EE374BC2C4EB4E000877778 /* AppearanceMode.swift in Sources */,
 				0EE374BE2C4EB4EA00877778 /* AppearanceViewModel.swift in Sources */,
+				0EE374E12C4F5AD200877778 /* TimeMachineView.swift in Sources */,
 				0EE374B32C4EA80C00877778 /* AppIcon.swift in Sources */,
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
@@ -262,6 +285,7 @@
 				0EE374C02C4EB4FF00877778 /* AppearanceSettingsView.swift in Sources */,
 				0E3838C22C49F29800D8C449 /* ContactUs.swift in Sources */,
 				0E3838C42C49FC8E00D8C449 /* AboutApp.swift in Sources */,
+				0EE374DE2C4F3A9D00877778 /* TodayView.swift in Sources */,
 				0E60578D2C4AB04500BD821A /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

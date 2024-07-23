@@ -11,7 +11,7 @@ struct ContentView: View {
     
     // MARK: - Variables
     // Default page for now
-    @State private var selection = 4;
+    @State private var selection = 1;
     
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
@@ -24,16 +24,16 @@ struct ContentView: View {
         TabView(selection: $selection,
                 content:  {
             NavigationView {
-                Text("1st Tab")
-            } .tabItem { Label("1st Tab", systemImage: "1.circle") }
+                TodayView()
+            } .tabItem { Label("Today", systemImage: "clock.fill") }
                 .tag(1)
             NavigationView {
                 Text("2nd Tab")
-            } .tabItem { Label("2nd Tab", systemImage: "2.circle") }
+            } .tabItem { Label("Time Machine", systemImage: "clock.arrow.circlepath") }
                 .tag(2)
             NavigationView {
                 Text("3rd Tab")
-            } .tabItem { Label("3rd Tab", systemImage: "3.circle") }
+            } .tabItem { Label("Duration", systemImage: "timelapse") }
                 .tag(3)
             NavigationView {
                 SettingsView(themeManager2: ThemeManager())

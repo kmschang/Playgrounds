@@ -12,8 +12,9 @@ struct ListProject3App: App {
     
     @StateObject private var themeManager = ThemeManager()
     @StateObject private var appearanceViewModel = AppearanceViewModel()
-
     
+    let pasteboard = UIPasteboard.general
+
     var body: some Scene {
         WindowGroup {
             ContentView()
