@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2BC9D72C50187B00745367 /* DateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BC9D62C50187B00745367 /* DateInformation.swift */; };
+		0E2BC9D92C50188300745367 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BC9D82C50188300745367 /* DateViewModel.swift */; };
 		0E3838A62C49ABB200D8C449 /* ListProject3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838A52C49ABB200D8C449 /* ListProject3App.swift */; };
 		0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838A72C49ABB200D8C449 /* ContentView.swift */; };
 		0E3838AA2C49ABB300D8C449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838A92C49ABB300D8C449 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2BC9D62C50187B00745367 /* DateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformation.swift; sourceTree = "<group>"; };
+		0E2BC9D82C50188300745367 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		0E3838A22C49ABB200D8C449 /* ListProject3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListProject3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3838A52C49ABB200D8C449 /* ListProject3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProject3App.swift; sourceTree = "<group>"; };
 		0E3838A72C49ABB200D8C449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				0EE374DD2C4F3A9D00877778 /* TodayView.swift */,
+				0E2BC9D62C50187B00745367 /* DateInformation.swift */,
+				0E2BC9D82C50188300745367 /* DateViewModel.swift */,
 			);
 			path = TodayView;
 			sourceTree = "<group>";
@@ -269,9 +275,11 @@
 				0E60578F2C4AB07B00BD821A /* ThemeSelectionView.swift in Sources */,
 				0E6057912C4AB0A700BD821A /* AddCustomColorView.swift in Sources */,
 				0EE374B72C4EA82200877778 /* AppIconSelectionView.swift in Sources */,
+				0E2BC9D92C50188300745367 /* DateViewModel.swift in Sources */,
 				0EE374BC2C4EB4E000877778 /* AppearanceMode.swift in Sources */,
 				0EE374BE2C4EB4EA00877778 /* AppearanceViewModel.swift in Sources */,
 				0EE374E12C4F5AD200877778 /* TimeMachineView.swift in Sources */,
+				0E2BC9D72C50187B00745367 /* DateInformation.swift in Sources */,
 				0EE374B32C4EA80C00877778 /* AppIcon.swift in Sources */,
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,

@@ -10,16 +10,14 @@ import SwiftUI
 struct TodayView: View {
     
     @EnvironmentObject var themeManager: ThemeManager
-    
+    @StateObject private var viewModel = DateViewModel()
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     var body: some View {
         
         let lightGray:Color = Color(red: 0.90, green: 0.90, blue: 0.90, opacity: 1.00)
         let darkGray:Color = Color(red: 0.10, green: 0.10, blue: 0.10, opacity: 1.00)
-        
-        let lighterGray:Color = Color(red: 0.80, green: 0.80, blue: 0.80, opacity: 1.00)
-        let darkerGray:Color = Color(red: 0.20, green: 0.20, blue: 0.20, opacity: 1.00)
+    
         
         NavigationStack {
             
@@ -37,7 +35,7 @@ struct TodayView: View {
                             VStack {
                                 Text("Day")
                                     .font(.system(size: fullHeight / 18, weight: .bold))
-                                Text("204")
+                                Text("\(viewModel.dateInfo.dayOfYear)")
                                     .font(.system(size: fullHeight / 6, weight: .black))
                                     .foregroundStyle(themeManager.selectedTheme.color)
                             }
@@ -45,6 +43,7 @@ struct TodayView: View {
                         }
                         Spacer()
                     }
+
                     .frame(height: fullHeight / 1.75)
                     .background(
                         RoundedRectangle(cornerRadius: 25)
@@ -55,13 +54,14 @@ struct TodayView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Text("07/22/24")
+                            Text(viewModel.dateInfo.date)
                                 .font(.system(size: fullHeight / 10, weight: .black))
                                 .foregroundStyle(themeManager.selectedTheme.color)
                             Spacer()
                         }
                         Spacer()
                     }
+
                     .frame(height: fullHeight / 4.5 - fullHeight / 32)
                     .background(
                         RoundedRectangle(cornerRadius: 25)
@@ -71,30 +71,20 @@ struct TodayView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
                             
-                            sliderContent(label: "Week", data: "30", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                            sliderContent(label: "Month", data: "\(viewModel.dateInfo.monthOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                             
-                            sliderContent(label: "Month", data: "7", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                            sliderContent(label: "Week", data: "\(viewModel.dateInfo.weekOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                             
+                            sliderContent(label: "Year", data: "\(viewModel.dateInfo.year)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                             
-                            sliderContent(label: "Day", data: "204", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-                            
-                            sliderContent(label: "Year", data: "2024", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-                            sliderContent(label: "Weekday", data: "Monday", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-            
+                            sliderContent(label: "Weekday", data: "\(viewModel.dateInfo.weekday)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                         }
                     }
+
                     .clipShape(
                         RoundedRectangle(cornerRadius: 15)
                     )
 
-                    
-                    
-                    
-                    
-                    
                 }
                 .padding(fullWidth / 32)
                 

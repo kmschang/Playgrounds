@@ -12,6 +12,9 @@ struct ListProject3App: App {
     
     @StateObject private var themeManager = ThemeManager()
     @StateObject private var appearanceViewModel = AppearanceViewModel()
+    @StateObject private var viewModel = DateViewModel()
+    
+    @Environment(\.scenePhase) private var scenePhase
     
     let pasteboard = UIPasteboard.general
 
@@ -20,6 +23,12 @@ struct ListProject3App: App {
             ContentView()
                 .environmentObject(themeManager)
                 .environmentObject(appearanceViewModel)
+                .environmentObject(viewModel)
+        }
+        .onChange(of: scenePhase) { oldPhase, newPhase in
+            if newPhase == .active {
+                viewModel.appBecameActive()
+            }
         }
     }
 }
