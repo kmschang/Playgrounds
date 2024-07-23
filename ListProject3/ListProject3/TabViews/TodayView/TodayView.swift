@@ -95,12 +95,7 @@ struct TodayView: View {
                 
                 
                 
-        }.toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Day Calculator")
-                    .fontWeight(.semibold)
-                }
-            }
+        }
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
         }
