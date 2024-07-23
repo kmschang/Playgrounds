@@ -43,6 +43,7 @@ class ThemeManager: ObservableObject {
             }
         }
         customColors.remove(atOffsets: offsets)
+        saveCustomColors() // Save the updated list of custom colors
     }
     
     private func saveTheme() {

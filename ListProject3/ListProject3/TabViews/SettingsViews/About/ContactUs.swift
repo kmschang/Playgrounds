@@ -49,11 +49,11 @@ struct ContactUs: View {
                             linkURL: "mailto:support@sonnazgroup.com",
                             linkText: "support@sonnazgroup.com")
                 ContactItem(iconName: "phone.fill",
-                            linkURL: "tel:2489608275",
-                            linkText: "+1 (248) 960-8275")
+                            linkURL: "tel:0",
+                            linkText: "+* (***) ***-****")
                 ContactItem(iconName: "map.fill",
-                            linkURL: "https://maps.apple.com/place?auid=14992674820182691193&lsp=9902",
-                            linkText: "2125 Campus Road\nToledo, OH 43623 \nUnited States")
+                            linkURL: "https://maps.apple.com/?address=Apple%20Park,%20One%20Apple%20Park%20Way,%20Cupertino,%20CA%2095014,%20United%20States&ll=37.3349,-122.0090&q=Apple%20Park&t=m",
+                            linkText: "1 Apple Park Way\nCupertin, CA 95014 \nUnited States")
             } header: {
                 Text("Direct Contact Information")
             }

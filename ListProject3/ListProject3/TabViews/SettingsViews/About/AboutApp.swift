@@ -23,7 +23,7 @@ struct ShareItem: View {
                 .resizable()
                 .frame(width: 20, height: 20)
                 .padding(.trailing, 5)
-                .padding(.leading, 4)
+                .padding(.leading, 2)
                 .foregroundStyle(themeManager.selectedTheme.color)
             Link(destination: URL(string: linkURL)!) {
                 Text(linkText)
@@ -41,41 +41,32 @@ struct AboutApp: View {
     
     @StateObject private var iconViewModel = AppIconViewModel()
     @EnvironmentObject var appearanceViewModel: AppearanceViewModel
+    @EnvironmentObject var themeManager: ThemeManager
         
     var body: some View {
-                
         List {
-            
             Section {
-                
-                Image(iconViewModel.getCurrentIconPreviewName())
-                    .resizable()
-                    .listRowBackground(Color.red.opacity(0))
-                    .frame(width: UIScreen.main.bounds.size.width / 1.25, height: UIScreen.main.bounds.size.width / 1.25, alignment: .center)
-                    .listRowSeparator(.hidden)
-                
-                HStack {
-                    Spacer()
-                    Text("Day Calculator")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Spacer()
-                }
-                .listRowBackground(Color.red.opacity(0))
-                .listRowSeparator(.hidden)
-                
-                HStack {
-                    Spacer()
+                VStack {
+                    Image(iconViewModel.getCurrentIconPreviewName())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.size.width / 1.25, height: UIScreen.main.bounds.size.width / 1.25)
+                        .padding(.bottom, 15)
+                    
+                    Text("App Name")
+                        .font(.system(size: 24, weight: .bold))
+                    
                     Text("Version \(Bundle.main.releaseVersionNumber ?? "1.0.0") (\(Bundle.main.buildVersionNumber ?? "1"))")
-                    Spacer()
+                    
+                    Text("By Sonnaz Group")
+                    
+                    Text("© 2023 - 2024")
                 }
-                .listRowBackground(Color.red.opacity(0))
-                .listRowSeparator(.hidden)
-                
+                .frame(maxWidth: .infinity)
+                .listRowBackground(Color.clear)
             }
             
-            Section {
-                // Add Content to share with others
+            Section(header: Text("Share"), footer: Text("Thank you for your support")) {
                 ContactItem(iconName: "message.fill",
                             linkURL: "https://apple.com",
                             linkText: "Share via messages")
@@ -83,27 +74,21 @@ struct AboutApp: View {
                             linkURL: "https://apple.com",
                             linkText: "Share via mail")
                 ShareItem(iconName: "Facebook.SFSymbol",
-                            linkURL: "https://apple.com",
-                            linkText: "Share via Facebook")
+                          linkURL: "https://apple.com",
+                          linkText: "Share via Facebook")
                 ShareItem(iconName: "Instagram.SFSymbol",
-                            linkURL: "https://apple.com",
-                            linkText: "Share via Instagram")
+                          linkURL: "https://apple.com",
+                          linkText: "Share via Instagram")
                 ShareItem(iconName: "X.SFSymbol",
-                            linkURL: "https://apple.com",
-                            linkText: "Share via X")
+                          linkURL: "https://apple.com",
+                          linkText: "Share via X")
                 ShareItem(iconName: "mastodon.SFSymbol",
-                            linkURL: "https://apple.com",
-                            linkText: "Share via Mastodon")
+                          linkURL: "https://apple.com",
+                          linkText: "Share via Mastodon")
                 ShareItem(iconName: "Snapchat.SFSymbol",
-                            linkURL: "https://apple.com",
-                            linkText: "Share via SnapChat")
-            } header : {
-                Text("Share")
-            } footer: {
-                Text("Thank you for your support")
+                          linkURL: "https://apple.com",
+                          linkText: "Share via SnapChat")
             }
-            
-            
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -115,6 +100,7 @@ struct AboutApp: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+
 
 // MARK: - Preview
 struct AboutApp_Previews: PreviewProvider {
@@ -130,5 +116,15 @@ struct AboutApp_Previews: PreviewProvider {
         return AboutApp()
             .environmentObject(themeManager) // Inject the sample ThemeManager
             .environmentObject(appearanceViewModel) // Inject the sample AppearanceViewModel
+    }
+}
+
+// MARK: - Version ID Bundle
+extension Bundle {
+    var releaseVersionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    var buildVersionNumber: String? {
+        return infoDictionary?["CFBundleVersion"] as? String
     }
 }

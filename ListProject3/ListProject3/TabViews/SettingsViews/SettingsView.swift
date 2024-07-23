@@ -10,8 +10,6 @@ import SwiftUI
 struct SettingsView: View {
         
     // MARK: - Variables
-    @State private var infoScreen:Bool = false
-    @State private var contactScreen:Bool = false
     
     @EnvironmentObject var themeManager: ThemeManager
     @ObservedObject var themeManager2: ThemeManager
@@ -90,37 +88,13 @@ struct SettingsView: View {
             }
         }
         .toolbar {
-            ToolbarItemGroup(placement: .topBarLeading) {
-                Button {
-                    infoScreen.toggle()
-                } label: {
-                    Label("Info", systemImage: "info.circle.fill")
-                }
-            }
             ToolbarItem(placement: .principal) {
                 Text("Cool Title")
                     .fontWeight(.semibold)
             }
-            ToolbarItemGroup(placement: .topBarTrailing) {
-                Button {
-                    contactScreen.toggle()
-                } label : {
-                    Label("Contact", systemImage: "envelope.circle.fill")
-                }
-            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .popover(isPresented: $infoScreen, content: {
-            NavigationView {
-                InfoPopUp()
-            }
-        })
-        .popover(isPresented: $contactScreen, content: {
-            NavigationView {
-                ContactPopUp()
-            }
-        })
 
         
         
