@@ -11,39 +11,45 @@ import Combine
 
 // MARK: - Theme Manager
 class ThemeManager: ObservableObject {
-    @Published var selectedTheme: ThemeColor = .auto
-    @Published var customColors: [CustomColor] = []
+    @Published var selectedTheme: ThemeColor = .auto {
+        didSet {
+            saveTheme()
+        }
+    }
+    @Published var customColors: [CustomColor] = [] {
+        didSet {
+            saveCustomColors()
+        }
+    }
     
     private let userDefaults = UserDefaults.standard
     private let selectedThemeKey = "selectedTheme"
     private let customColorsKey = "customColors"
     
     init() {
-        loadTheme()
         loadCustomColors()
+        loadTheme()
     }
     
     func selectTheme(_ theme: ThemeColor) {
         selectedTheme = theme
-        saveTheme()
     }
     
     func addCustomColor(name: String, hexCode: String) {
         guard customColors.count < 10 else { return }
         let newColor = CustomColor(id: UUID(), name: name, hexCode: hexCode)
         customColors.append(newColor)
-        saveCustomColors()
     }
     
     func removeCustomColor(at offsets: IndexSet) {
-        for index in offsets {
-            let colorToDelete = customColors[index]
-            if selectedTheme == .custom(colorToDelete) {
-                selectedTheme = .auto // or select a default color
-            }
-        }
+        let colorsToRemove = offsets.map { customColors[$0] }
         customColors.remove(atOffsets: offsets)
-        saveCustomColors() // Save the updated list of custom colors
+        
+        // Check if the selected theme is one of the removed colors
+        if case .custom(let selectedCustomColor) = selectedTheme,
+           colorsToRemove.contains(where: { $0.id == selectedCustomColor.id }) {
+            selectedTheme = .auto
+        }
     }
     
     private func saveTheme() {
@@ -55,7 +61,17 @@ class ThemeManager: ObservableObject {
     private func loadTheme() {
         if let savedTheme = userDefaults.data(forKey: selectedThemeKey),
            let decodedTheme = try? JSONDecoder().decode(ThemeColor.self, from: savedTheme) {
-            selectedTheme = decodedTheme
+            // Validate the loaded theme
+            switch decodedTheme {
+            case .auto, .default:
+                selectedTheme = decodedTheme
+            case .custom(let customColor):
+                if customColors.contains(where: { $0.id == customColor.id }) {
+                    selectedTheme = decodedTheme
+                } else {
+                    selectedTheme = .auto
+                }
+            }
         }
     }
     
