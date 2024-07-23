@@ -28,7 +28,7 @@ struct ContentView: View {
             } .tabItem { Label("Today", systemImage: "clock.fill") }
                 .tag(1)
             NavigationView {
-                Text("2nd Tab")
+                TimeMachineView()
             } .tabItem { Label("Time Machine", systemImage: "clock.arrow.circlepath") }
                 .tag(2)
             NavigationView {
