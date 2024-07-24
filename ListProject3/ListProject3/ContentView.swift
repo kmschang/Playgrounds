@@ -10,40 +10,87 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - Variables
-    // Default page for now
-    @State private var selection = 1;
     
-
+    // Default page
+    @State private var selection = 1; //Today View
+    
+    // Themeing
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var themeManager: ThemeManager
 
+    // Orientation
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     
     // MARK: - Main Body
     var body: some View {
         
-        TabView(selection: $selection,
-                content:  {
-            NavigationView {
-                TodayView()
-            } .tabItem { Label("Today", systemImage: "clock.fill") }
-                .tag(1)
-            NavigationView {
-                TimeMachineView()
-            } .tabItem { Label("Time Machine", systemImage: "clock.arrow.circlepath") }
-                .tag(2)
-            NavigationView {
-                Text("3rd Tab")
-            } .tabItem { Label("Duration", systemImage: "timelapse") }
-                .tag(3)
-            NavigationView {
-                SettingsView(themeManager2: ThemeManager())
-                    .environmentObject(themeManager)
-            } .tabItem { Label("Settings", systemImage: "gear") }
-                .tag(4)
-        })
-        .tint(themeManager.selectedTheme.color)
+        // iPhone Vertical
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+            TabView(selection: $selection, content:  {
+                NavigationView {
+                    TodayView()
+                } .tabItem { Label("Today", systemImage: "clock.fill") }
+                    .tag(1)
+                NavigationView {
+                    TimeMachineView()
+                } .tabItem { Label("Time Machine", systemImage: "clock.arrow.circlepath") }
+                    .tag(2)
+                NavigationView {
+                    Text("3rd Tab")
+                } .tabItem { Label("Duration", systemImage: "timelapse") }
+                    .tag(3)
+                NavigationView {
+                    SettingsView(themeManager2: ThemeManager())
+                        .environmentObject(themeManager)
+                } .tabItem { Label("Settings", systemImage: "gear") }
+                    .tag(4)
+            })
+            .tint(themeManager.selectedTheme.color)
+        // iPad
+        } else if horizontalSizeClass == .regular && verticalSizeClass == .regular {
+            Text("iPad")
+        // iPhone Horizontal
+        } else {
+            NavigationSplitView {
+                List {
+                    Section{
+                        NavigationLink {
+                            TodayView()
+                        } label: {
+                            Label("Today", systemImage: "clock.fill")
+                        }
+                        NavigationLink {
+                            TimeMachineView()
+                        } label: {
+                            Label("Time Machine", systemImage: "clock.arrow.circlepath")
+                        }
+                        NavigationLink {
+                            Text("3rd Tab")
+                        } label: {
+                            Label("Duration", systemImage: "timelapse")
+                        }
+                        NavigationLink {
+                            SettingsView(themeManager2: ThemeManager())
+                        } label: {
+                            Label("Settings", systemImage: "gear")
+                        }
+
+                        
+                    } header: {
+                        Text("Menus")
+                    }
+                }
+            } detail: {
+                Text("Detail")
+            }
+        }
+        
+        
+        
             
     }
+    
     
     
 }
@@ -61,6 +108,7 @@ struct ContentView_Previews: PreviewProvider {
         return ContentView()
             .environmentObject(themeManager) // Inject the sample ThemeManager
             .environmentObject(appearanceViewModel) // Inject the sample AppearanceViewModel
+            .previewDevice("iPhone 15 Pro Max")
     }
 }
 

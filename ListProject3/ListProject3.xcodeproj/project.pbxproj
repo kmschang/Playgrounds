@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2BC9D72C50187B00745367 /* DateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BC9D62C50187B00745367 /* DateInformation.swift */; };
 		0E2BC9D92C50188300745367 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BC9D82C50188300745367 /* DateViewModel.swift */; };
+		0E2BC9DD2C51641600745367 /* OrientationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BC9DC2C51641600745367 /* OrientationViewController.swift */; };
 		0E3838A62C49ABB200D8C449 /* ListProject3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838A52C49ABB200D8C449 /* ListProject3App.swift */; };
 		0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838A72C49ABB200D8C449 /* ContentView.swift */; };
 		0E3838AA2C49ABB300D8C449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838A92C49ABB300D8C449 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		0E2BC9D62C50187B00745367 /* DateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformation.swift; sourceTree = "<group>"; };
 		0E2BC9D82C50188300745367 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
+		0E2BC9DC2C51641600745367 /* OrientationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationViewController.swift; sourceTree = "<group>"; };
 		0E3838A22C49ABB200D8C449 /* ListProject3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListProject3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3838A52C49ABB200D8C449 /* ListProject3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProject3App.swift; sourceTree = "<group>"; };
 		0E3838A72C49ABB200D8C449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				0E3838B32C49B1EF00D8C449 /* TabViews */,
 				0E3838A52C49ABB200D8C449 /* ListProject3App.swift */,
 				0E3838A72C49ABB200D8C449 /* ContentView.swift */,
+				0E2BC9DC2C51641600745367 /* OrientationViewController.swift */,
 				0E3838A92C49ABB300D8C449 /* Assets.xcassets */,
 				0E3838AB2C49ABB300D8C449 /* Preview Content */,
 			);
@@ -293,6 +296,7 @@
 				0EE374C02C4EB4FF00877778 /* AppearanceSettingsView.swift in Sources */,
 				0E3838C22C49F29800D8C449 /* ContactUs.swift in Sources */,
 				0E3838C42C49FC8E00D8C449 /* AboutApp.swift in Sources */,
+				0E2BC9DD2C51641600745367 /* OrientationViewController.swift in Sources */,
 				0EE374DE2C4F3A9D00877778 /* TodayView.swift in Sources */,
 				0E60578D2C4AB04500BD821A /* ThemeManager.swift in Sources */,
 			);
@@ -435,7 +439,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +469,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

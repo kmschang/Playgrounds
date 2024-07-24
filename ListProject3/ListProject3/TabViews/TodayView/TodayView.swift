@@ -13,82 +13,31 @@ struct TodayView: View {
     @StateObject private var viewModel = DateViewModel()
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
-    var body: some View {
-        
-        let lightGray:Color = Color(red: 0.90, green: 0.90, blue: 0.90, opacity: 1.00)
-        let darkGray:Color = Color(red: 0.10, green: 0.10, blue: 0.10, opacity: 1.00)
+    @State private var orientation = UIDeviceOrientation.unknown
+
+    func isLandscape() -> Bool {
+        return UIDevice.current.orientation.isLandscape
+    }
     
-        
+    var body: some View {
+
         NavigationStack {
             
-            GeometryReader { fullScreen in
-                
-                let fullHeight = fullScreen.size.height
-                let fullWidth = fullScreen.size.width
-                
-                VStack(spacing: fullHeight / 64) {
-                    
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Text("Day")
-                                    .font(.system(size: fullHeight / 18, weight: .bold))
-                                Text("\(viewModel.dateInfo.dayOfYear)")
-                                    .font(.system(size: fullHeight / 6, weight: .black))
-                                    .foregroundStyle(themeManager.selectedTheme.color)
-                            }
-                            Spacer()
-                        }
-                        Spacer()
+            Group {
+                if isLandscape() {
+                    NavigationSplitView {
+                        Text("Sidebar")
+                    } detail: {
+                        Text("Detail")
                     }
-
-                    .frame(height: fullHeight / 1.75)
-                    .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(colorScheme == .dark ? darkGray : lightGray)
-                    )
-                    
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text(viewModel.dateInfo.date)
-                                .font(.system(size: fullHeight / 10, weight: .black))
-                                .foregroundStyle(themeManager.selectedTheme.color)
-                            Spacer()
-                        }
-                        Spacer()
+                } else {
+                    NavigationStack {
+                        TodayView_Vertical()
                     }
-
-                    .frame(height: fullHeight / 4.5 - fullHeight / 32)
-                    .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(colorScheme == .dark ? darkGray : lightGray)
-                    )
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: fullHeight / 64){
-                            sliderContent(label: "Month", data: "\(viewModel.dateInfo.monthOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 64, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-                            sliderContent(label: "Week", data: "\(viewModel.dateInfo.weekOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-                            sliderContent(label: "Year", data: "\(viewModel.dateInfo.year)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-                            sliderContent(label: "Weekday", data: "\(viewModel.dateInfo.weekday)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                        }
-                    }
-                    .clipShape(
-                        RoundedRectangle(cornerRadius: 15)
-                    )
-
                 }
-                .padding(fullHeight / 64)
-
-                
-                
-                
+            }
+            .onRotate { newOrientation in
+                orientation = newOrientation
             }
 
                 
@@ -103,7 +52,90 @@ struct TodayView: View {
         
     }
 
+//MARK: - iPhone Vertical
+struct TodayView_Vertical: View {
+    
+    @EnvironmentObject var themeManager: ThemeManager
+    @StateObject private var viewModel = DateViewModel()
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
+    var body: some View {
+        
+        let lightGray:Color = Color(red: 0.90, green: 0.90, blue: 0.90, opacity: 1.00)
+        let darkGray:Color = Color(red: 0.10, green: 0.10, blue: 0.10, opacity: 1.00)
+        
+        GeometryReader { fullScreen in
+            
+            let fullHeight = fullScreen.size.height
+            let fullWidth = fullScreen.size.width
+            
+            VStack(spacing: fullHeight / 64) {
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text("Day")
+                                .font(.system(size: fullHeight / 18, weight: .bold))
+                            Text("\(viewModel.dateInfo.dayOfYear)")
+                                .font(.system(size: fullHeight / 6, weight: .black))
+                                .foregroundStyle(themeManager.selectedTheme.color)
+                        }
+                        Spacer()
+                    }
+                    Spacer()
+                }
 
+                .frame(height: fullHeight / 1.75)
+                .background(
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(colorScheme == .dark ? darkGray : lightGray)
+                )
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Text(viewModel.dateInfo.date)
+                            .font(.system(size: fullHeight / 10, weight: .black))
+                            .foregroundStyle(themeManager.selectedTheme.color)
+                        Spacer()
+                    }
+                    Spacer()
+                }
+
+                .frame(height: fullHeight / 4.5 - fullHeight / 32)
+                .background(
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(colorScheme == .dark ? darkGray : lightGray)
+                )
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: fullHeight / 64){
+                        sliderContent(label: "Month", data: "\(viewModel.dateInfo.monthOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 64, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                        
+                        sliderContent(label: "Week", data: "\(viewModel.dateInfo.weekOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                        
+                        sliderContent(label: "Year", data: "\(viewModel.dateInfo.year)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                        
+                        sliderContent(label: "Weekday", data: "\(viewModel.dateInfo.weekday)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                    }
+                }
+                .clipShape(
+                    RoundedRectangle(cornerRadius: 15)
+                )
+
+            }
+            .padding(fullHeight / 64)
+
+        }
+    }
+}
+
+
+
+//MARK: - Slider Template
 struct sliderContent: View {
     
     let label:String
