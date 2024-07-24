@@ -25,11 +25,7 @@ struct TodayView: View {
             
             Group {
                 if isLandscape() {
-                    NavigationSplitView {
-                        Text("Sidebar")
-                    } detail: {
-                        Text("Detail")
-                    }
+                    Text("SINGLE")
                 } else {
                     NavigationStack {
                         TodayView_Vertical()

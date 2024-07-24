@@ -75,15 +75,14 @@ struct ContentView: View {
                         } label: {
                             Label("Settings", systemImage: "gear")
                         }
-
-                        
                     } header: {
                         Text("Menus")
                     }
                 }
             } detail: {
-                Text("Detail")
+                Text("Main View Detail")
             }
+            .tint(themeManager.selectedTheme.color)
         }
         
         
