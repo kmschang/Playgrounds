@@ -26,7 +26,7 @@ struct TodayView: View {
                 let fullHeight = fullScreen.size.height
                 let fullWidth = fullScreen.size.width
                 
-                VStack {
+                VStack(spacing: fullHeight / 64) {
                     
                     VStack {
                         Spacer()
@@ -69,24 +69,23 @@ struct TodayView: View {
                     )
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack{
+                        HStack(spacing: fullHeight / 64){
+                            sliderContent(label: "Month", data: "\(viewModel.dateInfo.monthOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 64, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                             
-                            sliderContent(label: "Month", data: "\(viewModel.dateInfo.monthOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                            sliderContent(label: "Week", data: "\(viewModel.dateInfo.weekOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                             
-                            sliderContent(label: "Week", data: "\(viewModel.dateInfo.weekOfYear)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                            sliderContent(label: "Year", data: "\(viewModel.dateInfo.year)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                             
-                            sliderContent(label: "Year", data: "\(viewModel.dateInfo.year)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
-                            
-                            sliderContent(label: "Weekday", data: "\(viewModel.dateInfo.weekday)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
+                            sliderContent(label: "Weekday", data: "\(viewModel.dateInfo.weekday)", frameHeight: fullHeight / 4.5, frameWidth: fullWidth / 2.5, minWidth: fullWidth / 2 - fullHeight / 32, labelTextHeight: fullHeight / 28, dataTextHeight: fullHeight / 20, frameSpacing: fullHeight / 32)
                         }
                     }
-
                     .clipShape(
                         RoundedRectangle(cornerRadius: 15)
                     )
 
                 }
-                .padding(fullWidth / 32)
+                .padding(fullHeight / 64)
+
                 
                 
                 
@@ -112,6 +111,7 @@ struct sliderContent: View {
     
     let frameHeight: CGFloat
     let frameWidth: CGFloat
+    let minWidth: CGFloat
     let labelTextHeight: CGFloat
     let dataTextHeight: CGFloat
     let frameSpacing:CGFloat
@@ -137,8 +137,7 @@ struct sliderContent: View {
             Spacer()
         }
         .padding()
-        .frame(minWidth: 135, maxWidth: 1000, maxHeight: frameHeight - frameSpacing)
-        .frame(height: frameHeight - frameSpacing)
+        .frame(minWidth: minWidth, maxWidth: 1000, maxHeight: frameHeight)
         .background(
             RoundedRectangle(cornerRadius: 25)
                 .fill(colorScheme == .dark ? darkGray : lightGray)
