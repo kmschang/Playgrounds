@@ -13,11 +13,6 @@ struct TodayView: View {
     @StateObject private var viewModel = DateViewModel()
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
-    @State private var orientation = UIDeviceOrientation.unknown
-
-    func isLandscape() -> Bool {
-        return UIDevice.current.orientation.isLandscape
-    }
     
     var body: some View {
 

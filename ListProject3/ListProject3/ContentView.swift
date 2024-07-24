@@ -74,7 +74,6 @@ struct ContentView_Previews: PreviewProvider {
         return ContentView()
             .environmentObject(themeManager) // Inject the sample ThemeManager
             .environmentObject(appearanceViewModel) // Inject the sample AppearanceViewModel
-            .previewDevice("iPhone 15 Pro Max")
     }
 }
 
