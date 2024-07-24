@@ -23,24 +23,13 @@ struct TodayView: View {
 
         NavigationStack {
             
-            Group {
-                if isLandscape() {
-                    Text("SINGLE")
-                } else {
-                    NavigationStack {
-                        TodayView_Vertical()
-                    }
-                }
-            }
-            .onRotate { newOrientation in
-                orientation = newOrientation
-            }
+            TodayView_Vertical()
 
                 
                 
                 
         }
-            .navigationTitle("")
+            .navigationTitle("Day Calculator")
             .navigationBarTitleDisplayMode(.inline)
         }
         

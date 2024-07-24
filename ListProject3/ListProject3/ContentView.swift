@@ -24,9 +24,12 @@ struct ContentView: View {
     
     // MARK: - Main Body
     var body: some View {
-        
-        // iPhone Vertical
-        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+
+        // iPad
+        if horizontalSizeClass == .regular && verticalSizeClass == .regular {
+            Text("iPad")
+        // iPhone
+        } else {
             TabView(selection: $selection, content:  {
                 NavigationView {
                     TodayView()
@@ -46,42 +49,6 @@ struct ContentView: View {
                 } .tabItem { Label("Settings", systemImage: "gear") }
                     .tag(4)
             })
-            .tint(themeManager.selectedTheme.color)
-        // iPad
-        } else if horizontalSizeClass == .regular && verticalSizeClass == .regular {
-            Text("iPad")
-        // iPhone Horizontal
-        } else {
-            NavigationSplitView {
-                List {
-                    Section{
-                        NavigationLink {
-                            TodayView()
-                        } label: {
-                            Label("Today", systemImage: "clock.fill")
-                        }
-                        NavigationLink {
-                            TimeMachineView()
-                        } label: {
-                            Label("Time Machine", systemImage: "clock.arrow.circlepath")
-                        }
-                        NavigationLink {
-                            Text("3rd Tab")
-                        } label: {
-                            Label("Duration", systemImage: "timelapse")
-                        }
-                        NavigationLink {
-                            SettingsView(themeManager2: ThemeManager())
-                        } label: {
-                            Label("Settings", systemImage: "gear")
-                        }
-                    } header: {
-                        Text("Menus")
-                    }
-                }
-            } detail: {
-                Text("Main View Detail")
-            }
             .tint(themeManager.selectedTheme.color)
         }
         
