@@ -71,11 +71,23 @@ struct ContentView_Previews: PreviewProvider {
         // Create a sample AppearanceViewModel for the preview
         let appearanceViewModel = AppearanceViewModel()
         
-        return ContentView()
-            .environmentObject(themeManager) // Inject the sample ThemeManager
-            .environmentObject(appearanceViewModel) // Inject the sample AppearanceViewModel
+        return Group {
+            ContentView()
+                .environmentObject(themeManager)
+                .environmentObject(appearanceViewModel)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 15 Pro Max"))
+                .previewDisplayName("iPhone 15 Pro Max")
+            
+            ContentView()
+                .environmentObject(themeManager)
+                .environmentObject(appearanceViewModel)
+                .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (4th generation)"))
+                .previewDisplayName("iPad Pro 11-inch")
+        }
     }
 }
+
+
 
 // MARK: - HEX Color Extension
 extension Color {
