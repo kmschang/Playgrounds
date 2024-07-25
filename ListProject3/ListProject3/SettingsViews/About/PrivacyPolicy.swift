@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PrivacyPolicy: View {
     
+    // MARK: - Dismiss
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
