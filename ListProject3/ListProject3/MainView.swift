@@ -30,6 +30,7 @@ struct MainView: View {
             GeometryReader { fullScreen in
                 
                 let height = fullScreen.size.height
+                let width = fullScreen.size.width
                 
                 VStack(spacing: height * (2 / 100)) {
                     
