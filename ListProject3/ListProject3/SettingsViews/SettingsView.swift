@@ -14,6 +14,7 @@ struct SettingsView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @ObservedObject var themeManager2: ThemeManager
     @EnvironmentObject var appearanceViewModel: AppearanceViewModel
+    @Environment(\.dismiss) var dismiss
 
     
     // MARK: - Body
@@ -89,8 +90,15 @@ struct SettingsView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Cool Title")
+                Text("Settings")
                     .fontWeight(.semibold)
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Label("Done", systemImage: "chevron.down")
+                }
             }
         }
         .navigationBarTitleDisplayMode(.inline)

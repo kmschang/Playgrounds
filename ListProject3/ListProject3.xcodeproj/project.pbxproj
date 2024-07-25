@@ -22,6 +22,9 @@
 		0E60578D2C4AB04500BD821A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E60578C2C4AB04500BD821A /* ThemeManager.swift */; };
 		0E60578F2C4AB07B00BD821A /* ThemeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */; };
 		0E6057912C4AB0A700BD821A /* AddCustomColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */; };
+		0EAADA382C52873900FC74B0 /* DateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAADA372C52873900FC74B0 /* DateInformation.swift */; };
+		0EAADA3A2C52874800FC74B0 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAADA392C52874800FC74B0 /* DateViewModel.swift */; };
+		0EAADA3C2C52876500FC74B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAADA3B2C52876500FC74B0 /* MainView.swift */; };
 		0EE374B32C4EA80C00877778 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B22C4EA80C00877778 /* AppIcon.swift */; };
 		0EE374B52C4EA81500877778 /* AppIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B42C4EA81500877778 /* AppIconModel.swift */; };
 		0EE374B72C4EA82200877778 /* AppIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE374B62C4EA82200877778 /* AppIconSelectionView.swift */; };
@@ -47,6 +50,9 @@
 		0E60578C2C4AB04500BD821A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		0E60578E2C4AB07B00BD821A /* ThemeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionView.swift; sourceTree = "<group>"; };
 		0E6057902C4AB0A700BD821A /* AddCustomColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomColorView.swift; sourceTree = "<group>"; };
+		0EAADA372C52873900FC74B0 /* DateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformation.swift; sourceTree = "<group>"; };
+		0EAADA392C52874800FC74B0 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
+		0EAADA3B2C52876500FC74B0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0EE374B22C4EA80C00877778 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		0EE374B42C4EA81500877778 /* AppIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconModel.swift; sourceTree = "<group>"; };
 		0EE374B62C4EA82200877778 /* AppIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSelectionView.swift; sourceTree = "<group>"; };
@@ -85,11 +91,14 @@
 		0E3838A42C49ABB200D8C449 /* ListProject3 */ = {
 			isa = PBXGroup;
 			children = (
-				0E3838B32C49B1EF00D8C449 /* TabViews */,
+				0E3838B62C49B32800D8C449 /* SettingsViews */,
 				0E3838A52C49ABB200D8C449 /* ListProject3App.swift */,
 				0E3838A72C49ABB200D8C449 /* ContentView.swift */,
+				0EAADA3B2C52876500FC74B0 /* MainView.swift */,
 				0E3838A92C49ABB300D8C449 /* Assets.xcassets */,
 				0E3838AB2C49ABB300D8C449 /* Preview Content */,
+				0EAADA372C52873900FC74B0 /* DateInformation.swift */,
+				0EAADA392C52874800FC74B0 /* DateViewModel.swift */,
 			);
 			path = ListProject3;
 			sourceTree = "<group>";
@@ -100,14 +109,6 @@
 				0E3838AC2C49ABB300D8C449 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0E3838B32C49B1EF00D8C449 /* TabViews */ = {
-			isa = PBXGroup;
-			children = (
-				0E3838B62C49B32800D8C449 /* SettingsViews */,
-			);
-			path = TabViews;
 			sourceTree = "<group>";
 		};
 		0E3838B62C49B32800D8C449 /* SettingsViews */ = {
@@ -251,6 +252,7 @@
 				0EE374BE2C4EB4EA00877778 /* AppearanceViewModel.swift in Sources */,
 				0EE374B32C4EA80C00877778 /* AppIcon.swift in Sources */,
 				0E3838B52C49B1FF00D8C449 /* SettingsView.swift in Sources */,
+				0EAADA3C2C52876500FC74B0 /* MainView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
 				0E3838C02C49E9B600D8C449 /* Versions.swift in Sources */,
 				0E3838BE2C49E73000D8C449 /* TermsOfUse.swift in Sources */,
@@ -260,7 +262,9 @@
 				0E3838A62C49ABB200D8C449 /* ListProject3App.swift in Sources */,
 				0E3838C62C4A038900D8C449 /* AboutDeveloper.swift in Sources */,
 				0EE374C02C4EB4FF00877778 /* AppearanceSettingsView.swift in Sources */,
+				0EAADA382C52873900FC74B0 /* DateInformation.swift in Sources */,
 				0E3838C22C49F29800D8C449 /* ContactUs.swift in Sources */,
+				0EAADA3A2C52874800FC74B0 /* DateViewModel.swift in Sources */,
 				0E3838C42C49FC8E00D8C449 /* AboutApp.swift in Sources */,
 				0E60578D2C4AB04500BD821A /* ThemeManager.swift in Sources */,
 			);

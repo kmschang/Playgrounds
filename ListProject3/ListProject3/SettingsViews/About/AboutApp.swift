@@ -42,6 +42,7 @@ struct AboutApp: View {
     @StateObject private var iconViewModel = AppIconViewModel()
     @EnvironmentObject var appearanceViewModel: AppearanceViewModel
     @EnvironmentObject var themeManager: ThemeManager
+    @Environment(\.dismiss) var dismiss
         
     var body: some View {
         List {

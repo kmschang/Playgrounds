@@ -16,32 +16,17 @@ struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var themeManager: ThemeManager
+    @StateObject private var viewModel = DateViewModel()
 
     
     // MARK: - Main Body
     var body: some View {
         
-        TabView(selection: $selection,
-                content:  {
-            NavigationView {
-                Text("Today")
-            } .tabItem { Label("1st Tab", systemImage: "clock") }
-                .tag(1)
-            NavigationView {
-                Text("Time Machine")
-            } .tabItem { Label("2nd Tab", systemImage: "clock.arrow.circlepath") }
-                .tag(2)
-            NavigationView {
-                Text("Duration")
-            } .tabItem { Label("3rd Tab", systemImage: "timelapse") }
-                .tag(3)
-            NavigationView {
-                SettingsView(themeManager2: ThemeManager())
-                    .environmentObject(themeManager)
-            } .tabItem { Label("Settings", systemImage: "gear") }
-                .tag(4)
-        })
-        .tint(themeManager.selectedTheme.color)
+        NavigationStack {
+            MainView()
+                .tint(themeManager.selectedTheme.color)
+        }
+        
             
     }
     
