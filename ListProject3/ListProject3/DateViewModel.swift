@@ -10,15 +10,19 @@ import Combine
 
 class DateViewModel: ObservableObject {
     @Published var dateInfo: DateInformation
+    @Published var currentDate: DateInformation
     private var timer: Timer?
     private let calendar = Calendar.current
     
     init() {
-        self.dateInfo = DateViewModel.calculateDateInformation()
+        // Initialize dateInfo directly
+        let initialDateInfo = DateViewModel.calculateDateInformation()
+        self.dateInfo = initialDateInfo
+        self.currentDate = initialDateInfo
+        // Set up timer after properties are initialized
         setupTimer()
     }
     
-    // Change this method to public
     func setupTimer() {
         let midnight = calendar.startOfDay(for: Date().addingTimeInterval(86400))
         let timeInterval = midnight.timeIntervalSinceNow
@@ -30,7 +34,6 @@ class DateViewModel: ObservableObject {
         }
     }
     
-    // Add this new public method
     func appBecameActive() {
         updateDateInformation()
         setupTimer()
@@ -45,10 +48,14 @@ class DateViewModel: ObservableObject {
     
     private func updateDateInformation() {
         dateInfo = DateViewModel.calculateDateInformation()
+        currentDate = dateInfo
     }
     
     static func calculateDateInformation() -> DateInformation {
-        let date = Date()
+        return calculateDateInformation(for: Date())
+    }
+    
+    static func calculateDateInformation(for date: Date) -> DateInformation {
         let calendar = Calendar.current
         let dateFormatter = DateFormatter()
         
@@ -61,13 +68,26 @@ class DateViewModel: ObservableObject {
         dateFormatter.dateFormat = "MM/dd/yy"
         let dateString = dateFormatter.string(from: date)
         
+        let dayOfMonth = calendar.component(.day, from: date)
+        let monthOfYearNumber = calendar.component(.month, from: date)
+        let dayOfWeek = calendar.component(.weekday, from: date)
+        
         return DateInformation(
             dayOfYear: calendar.ordinality(of: .day, in: .year, for: date) ?? 0,
             weekday: weekday,
             weekOfYear: calendar.component(.weekOfYear, from: date),
             monthOfYear: month,
             year: calendar.component(.year, from: date),
-            date: dateString
+            date: dateString,
+            dayOfMonth: dayOfMonth,
+            monthOfYearNumber: monthOfYearNumber,
+            dayOfWeek: dayOfWeek
         )
+    }
+    
+    func getDayOfWeek(for date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE"
+        return dateFormatter.string(from: date)
     }
 }

@@ -5,6 +5,7 @@
 //  Created by Kyle Schang on 7/23/24.
 //
 
+
 import Foundation
 
 struct DateInformation {
@@ -14,4 +15,7 @@ struct DateInformation {
     let monthOfYear: String
     let year: Int
     let date: String
+    let dayOfMonth: Int
+    let monthOfYearNumber: Int
+    let dayOfWeek: Int
 }
