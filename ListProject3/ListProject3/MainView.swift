@@ -33,26 +33,9 @@ struct MainView: View {
                 
                 VStack(spacing: height * (2 / 100)) {
                     
-                    
-                    
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(colorScheme == .dark ? darkGray : lightGray)
-                        .frame(height: height * (18 / 100))
-                        .overlay {
-                            VStack {
-                                Text("\(dateViewModel.dateInfo.monthOfYear)")
-                                    .font(.system(size: height * (4 / 100), weight: .bold))
-                                    .foregroundStyle(themeManager.selectedTheme.color)
-                                
-                                GeometryReader { slider in
-                                    
-                                    let width = slider.size.width
-                                    
-                                    
-                                }
+                                        
+                    CurrentWeekView(dateViewModel: dateViewModel)
 
-                            }.padding(.vertical, height * (1 / 100))
-                        }
                     
                     RoundedRectangle(cornerRadius: 25)
                         .fill(colorScheme == .dark ? darkGray : lightGray)

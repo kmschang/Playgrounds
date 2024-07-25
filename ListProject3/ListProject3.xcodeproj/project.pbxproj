@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E113FAE2C52DAE00043B47F /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E113FAD2C52DAE00043B47F /* DayView.swift */; };
 		0E113FB02C52DB630043B47F /* DaysScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E113FAF2C52DB630043B47F /* DaysScrollView.swift */; };
+		0E2917682C52E0CA0034F220 /* CurrentWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2917672C52E0CA0034F220 /* CurrentWeekView.swift */; };
 		0E3838A62C49ABB200D8C449 /* ListProject3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838A52C49ABB200D8C449 /* ListProject3App.swift */; };
 		0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3838A72C49ABB200D8C449 /* ContentView.swift */; };
 		0E3838AA2C49ABB300D8C449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3838A92C49ABB300D8C449 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		0E113FAD2C52DAE00043B47F /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		0E113FAF2C52DB630043B47F /* DaysScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysScrollView.swift; sourceTree = "<group>"; };
+		0E2917672C52E0CA0034F220 /* CurrentWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeekView.swift; sourceTree = "<group>"; };
 		0E3838A22C49ABB200D8C449 /* ListProject3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListProject3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3838A52C49ABB200D8C449 /* ListProject3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProject3App.swift; sourceTree = "<group>"; };
 		0E3838A72C49ABB200D8C449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				0E3838AB2C49ABB300D8C449 /* Preview Content */,
 				0EAADA372C52873900FC74B0 /* DateInformation.swift */,
 				0EAADA392C52874800FC74B0 /* DateViewModel.swift */,
+				0E2917672C52E0CA0034F220 /* CurrentWeekView.swift */,
 				0E113FAD2C52DAE00043B47F /* DayView.swift */,
 				0E113FAF2C52DB630043B47F /* DaysScrollView.swift */,
 			);
@@ -262,6 +265,7 @@
 				0EAADA3C2C52876500FC74B0 /* MainView.swift in Sources */,
 				0E3838A82C49ABB200D8C449 /* ContentView.swift in Sources */,
 				0E113FB02C52DB630043B47F /* DaysScrollView.swift in Sources */,
+				0E2917682C52E0CA0034F220 /* CurrentWeekView.swift in Sources */,
 				0E3838C02C49E9B600D8C449 /* Versions.swift in Sources */,
 				0E3838BE2C49E73000D8C449 /* TermsOfUse.swift in Sources */,
 				0EE374B52C4EA81500877778 /* AppIconModel.swift in Sources */,
