@@ -28,78 +28,46 @@ struct MainView: View {
             
             GeometryReader { fullScreen in
                 
-                let height = fullScreen.size.height
                 
-                VStack {
-                    
-                    // Navigation Bar
-                    ZStack {
-                        VStack {
-                            Rectangle()
-                                .fill(colorScheme == .dark ? Color(hex: "252526") : Color(hex: "#F2F2F7"))
-                                .frame(height: height / 12)
-                                .ignoresSafeArea()
-                            Spacer()
+                
+                
+            }
+            .toolbarBackground(Color(hex: colorScheme == .dark ? "1C1C1E" : "ededed"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        settingsPopUp.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                            .foregroundStyle(themeManager.selectedTheme.color)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    HStack(spacing: 10) {
+                        Button {
+                            timeMachinePopUp.toggle()
+                        } label: {
+                            Image(systemName: "clock.arrow.2.circlepath")
+                                .foregroundStyle(themeManager.selectedTheme.color)
                         }
-                        VStack {
-                            RoundedRectangle(cornerRadius: 25)
-                                .fill(colorScheme == .dark ? Color(hex: "252526") : Color(hex: "#F2F2F7"))
-                                .frame(height: height / 8)
-                                .ignoresSafeArea()
-                            Spacer()
-                        }
-                        
-                        VStack {
-                            ZStack {
-                                HStack {
-                                    Spacer()
-                                    Text("Day Calculator")
-                                        .font(.system(size: 20, weight: .semibold))
-                                    Spacer()
-                                }
-                                
-                                HStack {
-                                    Button {
-                                        settingsPopUp.toggle()
-                                    } label: {
-                                        Image(systemName: "gear")
-                                            .font(.system(size: 20, weight: .bold))
-                                    }
-                                    Spacer()
-                                }
-                                .padding(.horizontal, 20)
-                                
-                                HStack(spacing: 20) {
-                                    Spacer()
-                                    Button {
-                                        timeMachinePopUp.toggle()
-                                    } label: {
-                                        Image(systemName: "clock.arrow.2.circlepath")
-                                            .font(.system(size: 20, weight: .bold))
-                                    }
-                                    
-                                    Button {
-                                        durationPopUp.toggle()
-                                    } label: {
-                                        Image(systemName: "timelapse")
-                                            .font(.system(size: 20, weight: .bold))
-                                    }
-                                }
-                                .padding(.horizontal, 20)
-                            }
-                            Spacer()
+                        Button {
+                            durationPopUp.toggle()
+                        } label: {
+                            Image(systemName: "timelapse")
+                                .foregroundStyle(themeManager.selectedTheme.color)
                         }
                     }
-                    
-                    
-                    // Body
-                    
-                    RoundedRectangle(cornerRadius: 25)
-                    
-                    
+                }
+                ToolbarItem(placement: .principal) {
+                    Text("Day Calculator")
+                        .fontWeight(.semibold)
                 }
             }
         }
+        
         .popover(isPresented: $settingsPopUp, content: {
             NavigationView {
                 SettingsView(themeManager2: ThemeManager())
@@ -117,8 +85,6 @@ struct MainView: View {
             }
         })
         .tint(themeManager.selectedTheme.color)
-        .navigationTitle("")
-        .navigationBarTitleDisplayMode(.inline)
         
         
         
