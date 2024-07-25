@@ -24,16 +24,16 @@ struct ContentView: View {
         TabView(selection: $selection,
                 content:  {
             NavigationView {
-                Text("1st Tab")
-            } .tabItem { Label("1st Tab", systemImage: "1.circle") }
+                Text("Today")
+            } .tabItem { Label("1st Tab", systemImage: "clock") }
                 .tag(1)
             NavigationView {
-                Text("2nd Tab")
-            } .tabItem { Label("2nd Tab", systemImage: "2.circle") }
+                Text("Time Machine")
+            } .tabItem { Label("2nd Tab", systemImage: "clock.arrow.circlepath") }
                 .tag(2)
             NavigationView {
-                Text("3rd Tab")
-            } .tabItem { Label("3rd Tab", systemImage: "3.circle") }
+                Text("Duration")
+            } .tabItem { Label("3rd Tab", systemImage: "timelapse") }
                 .tag(3)
             NavigationView {
                 SettingsView(themeManager2: ThemeManager())
