@@ -20,7 +20,8 @@ struct MainView: View {
     
     var body: some View {
         
-            
+        let darkGray:Color = Color(hex: "1C1C1C")
+        let lightGray:Color = Color(hex: "EDEDED")
 
                 
 
@@ -28,11 +29,39 @@ struct MainView: View {
             
             GeometryReader { fullScreen in
                 
+                let height = fullScreen.size.height
+                let width = fullScreen.size.width
                 
+                VStack(spacing: height * (2 / 100)) {
+                    
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(colorScheme == .dark ? darkGray : lightGray)
+                        .frame(height: height * (18 / 100))
+                    
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(colorScheme == .dark ? darkGray : lightGray)
+                        .frame(height: height * (36 / 100))
+                    
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(colorScheme == .dark ? darkGray : lightGray)
+                        .frame(height: height * (25 / 100))
+                    
+                    HStack(spacing: height * (2 / 100)) {
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(colorScheme == .dark ? darkGray : lightGray)
+                            .frame(height: height * (15 / 100))
+                        
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(colorScheme == .dark ? darkGray : lightGray)
+                            .frame(height: height * (15 / 100))
+                    }
+                    
+                }
                 
                 
             }
-            .toolbarBackground(Color(hex: colorScheme == .dark ? "1C1C1E" : "ededed"), for: .navigationBar)
+            .padding(12)
+            .toolbarBackground(colorScheme == .dark ? darkGray : lightGray, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
