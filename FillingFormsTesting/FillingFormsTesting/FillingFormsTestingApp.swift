@@ -1,6 +1,6 @@
 //
-//  PostgreSQLApp.swift
-//  PostgreSQL
+//  FillingFormsTestingApp.swift
+//  FillingFormsTesting
 //
 //  Created by Kyle Schang on 8/7/24.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct PostgreSQLApp: App {
+struct FillingFormsTestingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

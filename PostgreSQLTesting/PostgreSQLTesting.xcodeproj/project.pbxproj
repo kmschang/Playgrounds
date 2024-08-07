@@ -7,64 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0ED6D6A12C63A0D6000BEAC2 /* PostgreSQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6D6A02C63A0D6000BEAC2 /* PostgreSQLApp.swift */; };
-		0ED6D6A32C63A0D6000BEAC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6D6A22C63A0D6000BEAC2 /* ContentView.swift */; };
-		0ED6D6A52C63A0D7000BEAC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED6D6A42C63A0D7000BEAC2 /* Assets.xcassets */; };
-		0ED6D6A82C63A0D7000BEAC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED6D6A72C63A0D7000BEAC2 /* Preview Assets.xcassets */; };
-		0ED6D6B02C63A396000BEAC2 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0ED6D6AF2C63A396000BEAC2 /* PostgresClientKit */; };
+		0EDBA7BA2C63B03800FEAB17 /* PostgreSQLTestingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBA7B92C63B03800FEAB17 /* PostgreSQLTestingApp.swift */; };
+		0EDBA7BC2C63B03800FEAB17 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBA7BB2C63B03800FEAB17 /* ContentView.swift */; };
+		0EDBA7BE2C63B03900FEAB17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDBA7BD2C63B03900FEAB17 /* Assets.xcassets */; };
+		0EDBA7C12C63B03900FEAB17 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDBA7C02C63B03900FEAB17 /* Preview Assets.xcassets */; };
+		0EDBA7C92C63B06000FEAB17 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDBA7C82C63B06000FEAB17 /* PostgresClientKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0ED6D69D2C63A0D6000BEAC2 /* PostgreSQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostgreSQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ED6D6A02C63A0D6000BEAC2 /* PostgreSQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgreSQLApp.swift; sourceTree = "<group>"; };
-		0ED6D6A22C63A0D6000BEAC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0ED6D6A42C63A0D7000BEAC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0ED6D6A72C63A0D7000BEAC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0EDBA7B62C63B03800FEAB17 /* PostgreSQLTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostgreSQLTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EDBA7B92C63B03800FEAB17 /* PostgreSQLTestingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgreSQLTestingApp.swift; sourceTree = "<group>"; };
+		0EDBA7BB2C63B03800FEAB17 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0EDBA7BD2C63B03900FEAB17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0EDBA7C02C63B03900FEAB17 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0ED6D69A2C63A0D6000BEAC2 /* Frameworks */ = {
+		0EDBA7B32C63B03800FEAB17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ED6D6B02C63A396000BEAC2 /* PostgresClientKit in Frameworks */,
+				0EDBA7C92C63B06000FEAB17 /* PostgresClientKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0ED6D6942C63A0D6000BEAC2 = {
+		0EDBA7AD2C63B03800FEAB17 = {
 			isa = PBXGroup;
 			children = (
-				0ED6D69F2C63A0D6000BEAC2 /* PostgreSQL */,
-				0ED6D69E2C63A0D6000BEAC2 /* Products */,
+				0EDBA7B82C63B03800FEAB17 /* PostgreSQLTesting */,
+				0EDBA7B72C63B03800FEAB17 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0ED6D69E2C63A0D6000BEAC2 /* Products */ = {
+		0EDBA7B72C63B03800FEAB17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0ED6D69D2C63A0D6000BEAC2 /* PostgreSQL.app */,
+				0EDBA7B62C63B03800FEAB17 /* PostgreSQLTesting.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0ED6D69F2C63A0D6000BEAC2 /* PostgreSQL */ = {
+		0EDBA7B82C63B03800FEAB17 /* PostgreSQLTesting */ = {
 			isa = PBXGroup;
 			children = (
-				0ED6D6A02C63A0D6000BEAC2 /* PostgreSQLApp.swift */,
-				0ED6D6A22C63A0D6000BEAC2 /* ContentView.swift */,
-				0ED6D6A42C63A0D7000BEAC2 /* Assets.xcassets */,
-				0ED6D6A62C63A0D7000BEAC2 /* Preview Content */,
+				0EDBA7B92C63B03800FEAB17 /* PostgreSQLTestingApp.swift */,
+				0EDBA7BB2C63B03800FEAB17 /* ContentView.swift */,
+				0EDBA7BD2C63B03900FEAB17 /* Assets.xcassets */,
+				0EDBA7BF2C63B03900FEAB17 /* Preview Content */,
 			);
-			path = PostgreSQL;
+			path = PostgreSQLTesting;
 			sourceTree = "<group>";
 		};
-		0ED6D6A62C63A0D7000BEAC2 /* Preview Content */ = {
+		0EDBA7BF2C63B03900FEAB17 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0ED6D6A72C63A0D7000BEAC2 /* Preview Assets.xcassets */,
+				0EDBA7C02C63B03900FEAB17 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,42 +72,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0ED6D69C2C63A0D6000BEAC2 /* PostgreSQL */ = {
+		0EDBA7B52C63B03800FEAB17 /* PostgreSQLTesting */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0ED6D6AB2C63A0D7000BEAC2 /* Build configuration list for PBXNativeTarget "PostgreSQL" */;
+			buildConfigurationList = 0EDBA7C42C63B03900FEAB17 /* Build configuration list for PBXNativeTarget "PostgreSQLTesting" */;
 			buildPhases = (
-				0ED6D6992C63A0D6000BEAC2 /* Sources */,
-				0ED6D69A2C63A0D6000BEAC2 /* Frameworks */,
-				0ED6D69B2C63A0D6000BEAC2 /* Resources */,
+				0EDBA7B22C63B03800FEAB17 /* Sources */,
+				0EDBA7B32C63B03800FEAB17 /* Frameworks */,
+				0EDBA7B42C63B03800FEAB17 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PostgreSQL;
+			name = PostgreSQLTesting;
 			packageProductDependencies = (
-				0ED6D6AF2C63A396000BEAC2 /* PostgresClientKit */,
+				0EDBA7C82C63B06000FEAB17 /* PostgresClientKit */,
 			);
-			productName = PostgreSQL;
-			productReference = 0ED6D69D2C63A0D6000BEAC2 /* PostgreSQL.app */;
+			productName = PostgreSQLTesting;
+			productReference = 0EDBA7B62C63B03800FEAB17 /* PostgreSQLTesting.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0ED6D6952C63A0D6000BEAC2 /* Project object */ = {
+		0EDBA7AE2C63B03800FEAB17 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					0ED6D69C2C63A0D6000BEAC2 = {
+					0EDBA7B52C63B03800FEAB17 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = 0ED6D6982C63A0D6000BEAC2 /* Build configuration list for PBXProject "PostgreSQL" */;
+			buildConfigurationList = 0EDBA7B12C63B03800FEAB17 /* Build configuration list for PBXProject "PostgreSQLTesting" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,45 +115,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 0ED6D6942C63A0D6000BEAC2;
+			mainGroup = 0EDBA7AD2C63B03800FEAB17;
 			packageReferences = (
-				0ED6D6AE2C63A396000BEAC2 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
+				0EDBA7C72C63B06000FEAB17 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
 			);
-			productRefGroup = 0ED6D69E2C63A0D6000BEAC2 /* Products */;
+			productRefGroup = 0EDBA7B72C63B03800FEAB17 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0ED6D69C2C63A0D6000BEAC2 /* PostgreSQL */,
+				0EDBA7B52C63B03800FEAB17 /* PostgreSQLTesting */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0ED6D69B2C63A0D6000BEAC2 /* Resources */ = {
+		0EDBA7B42C63B03800FEAB17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ED6D6A82C63A0D7000BEAC2 /* Preview Assets.xcassets in Resources */,
-				0ED6D6A52C63A0D7000BEAC2 /* Assets.xcassets in Resources */,
+				0EDBA7C12C63B03900FEAB17 /* Preview Assets.xcassets in Resources */,
+				0EDBA7BE2C63B03900FEAB17 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0ED6D6992C63A0D6000BEAC2 /* Sources */ = {
+		0EDBA7B22C63B03800FEAB17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ED6D6A32C63A0D6000BEAC2 /* ContentView.swift in Sources */,
-				0ED6D6A12C63A0D6000BEAC2 /* PostgreSQLApp.swift in Sources */,
+				0EDBA7BC2C63B03800FEAB17 /* ContentView.swift in Sources */,
+				0EDBA7BA2C63B03800FEAB17 /* PostgreSQLTestingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0ED6D6A92C63A0D7000BEAC2 /* Debug */ = {
+		0EDBA7C22C63B03900FEAB17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +216,7 @@
 			};
 			name = Debug;
 		};
-		0ED6D6AA2C63A0D7000BEAC2 /* Release */ = {
+		0EDBA7C32C63B03900FEAB17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,14 +272,14 @@
 			};
 			name = Release;
 		};
-		0ED6D6AC2C63A0D7000BEAC2 /* Debug */ = {
+		0EDBA7C52C63B03900FEAB17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PostgreSQL/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PostgreSQLTesting/Preview Content\"";
 				DEVELOPMENT_TEAM = GKM5JVVJFH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -293,7 +293,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.schang.PostgreSQL;
+				PRODUCT_BUNDLE_IDENTIFIER = com.schang.PostgreSQLTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -301,14 +301,14 @@
 			};
 			name = Debug;
 		};
-		0ED6D6AD2C63A0D7000BEAC2 /* Release */ = {
+		0EDBA7C62C63B03900FEAB17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PostgreSQL/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PostgreSQLTesting/Preview Content\"";
 				DEVELOPMENT_TEAM = GKM5JVVJFH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -322,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.schang.PostgreSQL;
+				PRODUCT_BUNDLE_IDENTIFIER = com.schang.PostgreSQLTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -333,20 +333,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0ED6D6982C63A0D6000BEAC2 /* Build configuration list for PBXProject "PostgreSQL" */ = {
+		0EDBA7B12C63B03800FEAB17 /* Build configuration list for PBXProject "PostgreSQLTesting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0ED6D6A92C63A0D7000BEAC2 /* Debug */,
-				0ED6D6AA2C63A0D7000BEAC2 /* Release */,
+				0EDBA7C22C63B03900FEAB17 /* Debug */,
+				0EDBA7C32C63B03900FEAB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0ED6D6AB2C63A0D7000BEAC2 /* Build configuration list for PBXNativeTarget "PostgreSQL" */ = {
+		0EDBA7C42C63B03900FEAB17 /* Build configuration list for PBXNativeTarget "PostgreSQLTesting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0ED6D6AC2C63A0D7000BEAC2 /* Debug */,
-				0ED6D6AD2C63A0D7000BEAC2 /* Release */,
+				0EDBA7C52C63B03900FEAB17 /* Debug */,
+				0EDBA7C62C63B03900FEAB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -354,23 +354,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0ED6D6AE2C63A396000BEAC2 /* XCRemoteSwiftPackageReference "PostgresClientKit" */ = {
+		0EDBA7C72C63B06000FEAB17 /* XCRemoteSwiftPackageReference "PostgresClientKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/codewinsdotcom/PostgresClientKit.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0ED6D6AF2C63A396000BEAC2 /* PostgresClientKit */ = {
+		0EDBA7C82C63B06000FEAB17 /* PostgresClientKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0ED6D6AE2C63A396000BEAC2 /* XCRemoteSwiftPackageReference "PostgresClientKit" */;
+			package = 0EDBA7C72C63B06000FEAB17 /* XCRemoteSwiftPackageReference "PostgresClientKit" */;
 			productName = PostgresClientKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 0ED6D6952C63A0D6000BEAC2 /* Project object */;
+	rootObject = 0EDBA7AE2C63B03800FEAB17 /* Project object */;
 }
